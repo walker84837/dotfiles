@@ -1,0 +1,7 @@
+{
+	"LICENSE.md": "https://www.gnu.org/licenses/gpl-3.0.md",
+	"README.md": "https://raw.githubusercontent.com/jehna/readme-best-practices/master/README-default.md",
+	".gitignore": "https://raw.githubusercontent.com/github/gitignore/main/Go.gitignore",
+	"CONTRIBUTING.md": "https://raw.githubusercontent.com/github/opensource.guide/main/CONTRIBUTING.md",
+	"CODE_OF_CONDUCT.md": "https://raw.githubusercontent.com/github/opensource.guide/main/CODE_OF_CONDUCT.md"
+}

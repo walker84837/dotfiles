@@ -1,0 +1,54 @@
+[font]
+size = 12.0
+
+[font.bold]
+family = "Iosevka NF"
+style = "SemiBold"
+
+[font.bold_italic]
+family = "Iosevka NF"
+style = "SemiBold Obl"
+
+[font.italic]
+family = "Iosevka NF"
+style = "Light Obl"
+
+[font.normal]
+family = "Iosevka NF"
+style = "Light"
+
+[colors.bright]
+black = "0x373b41"
+blue = "0x81a2be"
+cyan = "0x8abeb7"
+green = "0xb5bd68"
+magenta = "0xb294bb"
+red = "0xcc6666"
+white = "0xc5c8c6"
+yellow = "0xf0c674"
+
+[colors.normal]
+black = "0x282a2e"
+blue = "0x5f819d"
+cyan = "0x5e8d87"
+green = "0x8c9440"
+magenta = "0x85678f"
+red = "0xa54242"
+white = "0x707880"
+yellow = "0xde935f"
+
+[colors.primary]
+background = "0x1d1f21"
+foreground = "0xc5c8c6"
+
+[window]
+padding = { x = 16, y = 16 }
+opacity = 0.75
+dynamic_title = true
+
+[cursor]
+style = { shape = "Block" }
+thickness = 0.25
+
+[selection]
+save_to_clipboard = true
