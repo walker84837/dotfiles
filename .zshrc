@@ -20,7 +20,6 @@ export GOPATH=~/.cache/go
 
 # Source Commands
 source "${ZINIT_HOME}/zinit.zsh"
-source /home/$USER/.config/broot/launcher/bash/br
 
 # Options and History Settings
 HISTSIZE=5000
