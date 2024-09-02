@@ -1,0 +1,767 @@
+
+2024/08/24 (20:54:30) | ===> btop++ v.1.3.2
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+
+2024/08/24 (20:54:30) | ===> btop++ v.1.3.2
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:30) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:31) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:32) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:33) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:34) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU utilization: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM clock speed: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power usage: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU power state: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get GPU temperature: GPU is lost
+2024/08/24 (20:54:35) | WARNING: NVML: Failed to get VRAM info: GPU is lost
