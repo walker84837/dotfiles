@@ -1,3 +1,2 @@
 **/*.log
-.tmux/plugins
 .config/tmux/plugins
