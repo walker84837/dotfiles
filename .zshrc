@@ -23,7 +23,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 source /home/$USER/.config/broot/launcher/bash/br
 
 # Options and History Settings
-HISTSIZE=10000
+HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
@@ -101,36 +101,36 @@ gif2mp4() {
 discord_upgrade() {
 	DISCORD_INSTALL="/opt/discord"
 
-    # Step 1: Remove Discord install to remove conflicting files
-    printf "Removing Discord install at $DISCORD_INSTALL...\n"
-    sudo rm -rf "$DISCORD_INSTALL" || return
+	# Step 1: Remove Discord install to remove conflicting files
+	printf "Removing Discord install at $DISCORD_INSTALL...\n"
+	sudo rm -rf "$DISCORD_INSTALL" || return
 
-    # Step 2: Download the Vencord installer by getting the executable file from the POSIX sh script.
-    printf "Extracting installer path from POSIX sh script...\n"
-    INSTALLER_URL=$(curl -Ss https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh | grep -o 'http[s]*://[^"]*' | awk 'NR==1' | sed 's/\\$//' | sed 's/\s*$//') || return
+	# Step 2: Download the Vencord installer by getting the executable file from the POSIX sh script.
+	printf "Extracting installer path from POSIX sh script...\n"
+	INSTALLER_URL=$(curl -Ss https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh | grep -o 'http[s]*://[^"]*' | awk 'NR==1' | sed 's/\\$//' | sed 's/\s*$//') || return
 
-    # Step 2-1: Get the file path from the download link in the POSIX sh script.
-    printf "Getting file name from URL...\n"
-    INSTALLER_PATH=$(mktemp)
+	# Step 2-1: Get the file path from the download link in the POSIX sh script.
+	printf "Getting file name from URL...\n"
+	INSTALLER_PATH=$(mktemp)
 
-    # Step 3: Download the Vencord installer
-    wget "$INSTALLER_URL" -O "$INSTALLER_PATH"
-    chmod 755 "$INSTALLER_PATH"
+	# Step 3: Download the Vencord installer
+	wget "$INSTALLER_URL" -O "$INSTALLER_PATH"
+	chmod 755 "$INSTALLER_PATH"
 
-    # Step 4: Reinstall Discord and download basic modules
-    sudo pacman --noconfirm -S discord
-    timeout 5m bash -c 'discord > /dev/null'
+	# Step 4: Reinstall Discord and download basic modules
+	sudo pacman --noconfirm -S discord
+	timeout 5m bash -c 'discord > /dev/null'
 
-    # Step 5: Install Vencord on the Discord installation
-    printf "Installing Vencord to '$DISCORD_INSTALL'...\n"
-    sudo $INSTALLER_PATH -install -location "$DISCORD_INSTALL"
-    printf "Installing OpenAsar to '$DISCORD_INSTALL'...\n"
-    sudo $INSTALLER_PATH -install-openasar -location "$DISCORD_INSTALL"
+	# Step 5: Install Vencord on the Discord installation
+	printf "Installing Vencord to '$DISCORD_INSTALL'...\n"
+	sudo $INSTALLER_PATH -install -location "$DISCORD_INSTALL"
+	printf "Installing OpenAsar to '$DISCORD_INSTALL'...\n"
+	sudo $INSTALLER_PATH -install-openasar -location "$DISCORD_INSTALL"
 
-    # Step 6: Clean up temporary files
-    printf "Cleaning up temporary files...\n"
-    printf "Removing $INSTALLER_PATH...\n"
-    rm -rf "$INSTALLER_PATH" || return
+	# Step 6: Clean up temporary files
+	printf "Cleaning up temporary files...\n"
+	printf "Removing $INSTALLER_PATH...\n"
+	rm -rf "$INSTALLER_PATH" || return
 }
 
 change_wallpaper() {
