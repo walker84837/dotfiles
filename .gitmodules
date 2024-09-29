@@ -3,4 +3,4 @@
 	url = https://github.com/tmux-plugins/tpm
 [submodule ".local/share/deploy-dotfiles"]
 	path = .local/share/deploy-dotfiles
-	url = http://winlogon.ddns.net/winlogon/deploy-dotfiles-rs
+	url = https://winlogon.ddns.net/winlogon/deploy-dotfiles-rs
