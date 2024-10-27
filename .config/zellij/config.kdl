@@ -1,0 +1,88 @@
+// If you'd like to override the default keybindings completely, be sure to change "keybinds" to "keybinds clear-defaults=true"
+keybinds clear-defaults=true {
+    normal {
+        // Default movement between panes with vim-like keys
+        bind "Ctrl h" { MoveFocus "Left"; }
+        bind "Ctrl j" { MoveFocus "Down"; }
+        bind "Ctrl k" { MoveFocus "Up"; }
+        bind "Ctrl l" { MoveFocus "Right"; }
+        bind "Alt p" { NewPane; }  // Create new pane
+        bind "Ctrl d" { CloseFocus; }  // Close the current pane for faster workflow
+        bind "Ctrl f" { ToggleFocusFullscreen; }  // Toggle fullscreen for the focused pane
+        bind "Ctrl t" { NewTab; }  // Create a new tab
+        bind "F1" { TogglePaneFrames; }  // Toggle pane frames visibility
+        bind "Ctrl r" { SwitchToMode "Resize"; }  // Resize mode
+        bind "F2" { SwitchToMode "RenameTab"; TabNameInput 0; }  // Rename the current tab
+        bind "Ctrl p" { GoToPreviousTab; }  // Go to the previous tab
+        bind "Ctrl n" { GoToNextTab; }  // Go to the next tab
+    }
+    resize {
+        bind "Ctrl h" { Resize "Decrease Left"; }
+        bind "Ctrl j" { Resize "Increase Down"; }
+        bind "Ctrl k" { Resize "Decrease Up"; }
+        bind "Ctrl l" { Resize "Increase Right"; }
+        bind "Ctrl q" { SwitchToMode "Normal"; }  // Go back to normal mode
+    }
+    locked {
+        bind "Ctrl g" { SwitchToMode "Normal"; }  // Unlock and go to normal mode
+    }
+    renamepane {
+        bind "Ctrl c" { SwitchToMode "Normal"; }  // Cancel pane rename
+        bind "Esc" { UndoRenamePane; SwitchToMode "Normal"; }
+    }
+    renametab {
+        bind "Ctrl c" { SwitchToMode "Normal"; }  // Cancel tab rename
+        bind "Esc" { UndoRenameTab; SwitchToMode "Normal"; }
+    }
+    scroll {
+        bind "Ctrl s" { SwitchToMode "Normal"; }  // Exit scroll mode
+        bind "Ctrl j" { ScrollDown; }  // Scroll down
+        bind "Ctrl k" { ScrollUp; }  // Scroll up
+        bind "Ctrl f" { PageScrollDown; }  // Page down
+        bind "Ctrl b" { PageScrollUp; }  // Page up
+    }
+    shared {
+    	bind "Alt m" { ToggleMouseMode; }
+    }
+    shared_except "locked" {
+        bind "Ctrl g" { SwitchToMode "Locked"; }
+        bind "Ctrl q" { Quit; }
+    }
+    shared_except "resize" "locked" {
+        bind "Ctrl z" { SwitchToMode "Resize"; }  // Resize mode
+    }
+    shared_except "scroll" "locked" {
+        bind "Ctrl s" { SwitchToMode "Scroll"; }  // Scroll mode
+    }
+}
+
+// Plugins configuration remains the same unless needed
+plugins {
+    tab-bar location="zellij:tab-bar"
+    status-bar location="zellij:status-bar"
+    strider location="zellij:strider"
+    compact-bar location="zellij:compact-bar"
+    session-manager location="zellij:session-manager"
+    welcome-screen location="zellij:session-manager" {
+        welcome_screen true
+    }
+    filepicker location="zellij:strider" {
+        cwd "/"
+    }
+}
+
+// Default shell to use for new panes
+default_shell "zsh"
+default_cwd "/home/walker84837"  // Default CWD for new panes
+
+// Define theme
+theme "catppuccin-mocha"
+
+// Choose the default layout on startup
+default_layout "compact"
+
+// Set the default editor
+default_editor "nvim"  // Use Neovim as the default editor
+
+// Choose the mode to start in
+default_mode "normal"
