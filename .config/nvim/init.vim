@@ -17,6 +17,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " LSP & Language Support
 Plug 'neovim/nvim-lspconfig'
 Plug 'georgewfraser/java-language-server'
+Plug 'Decodetalkers/csharpls-extended-lsp.nvim'
 Plug 'rust-lang/rust.vim'
 Plug 'ziglang/zig.vim'
 Plug 'heavenshell/vim-jsdoc'
@@ -211,6 +212,7 @@ lua << EOF
 	lspconfig.gopls.setup({ capabilities = capabilities })
 	lspconfig.bashls.setup({ capabilities = capabilities })
 	lspconfig.java_language_server.setup({ capabilities = capabilities })
+	lspconfig.csharp_ls.setup({ capabilities = capabilities })
 
 	lspconfig.rust_analyzer.setup({
 		capabilities = capabilities,
@@ -237,6 +239,6 @@ lua << EOF
 	})
 
 	require("presence").setup({
-		-- options for the plugin
+		neovim_image_text   = "i use neovim btw",
 	})
 EOF

@@ -87,14 +87,15 @@ rename_files() {
 
 add_identity() {
 	eval "$(ssh-agent -s)"
-	ssh-add ~/.ssh/winlogon
+	ssh-add ~/.ssh/id_github
+	ssh-add ~/.ssh/id_codecove
 }
 
 gif2mp4() {
 	orig_path=$1
 	path_stripped="${orig_path%.*}"
 
-	ffmpeg -y -i $1 -c:v h264_nvenc -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" "$path_stripped.mp4" || return
+	ffmpeg -y -i $1 -c:v h264_vaapi -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" "$path_stripped.mp4" || return
 }
 
 discord_upgrade() {
