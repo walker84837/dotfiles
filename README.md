@@ -9,7 +9,7 @@ To get started with this project, you'll need to clone the repository and instal
 
 ```shell
 $ cd ~
-$ git clone --recurse-submodules http://winlogon.ddns.net/winlogon/dotfiles.git
+$ git clone --recurse-submodules https://winlogon.ddns.net/winlogon/dotfiles.git
 ```
 
 This command clones the repository and initializes the submodules. Once the cloning has finished:
@@ -27,15 +27,17 @@ To use this project, you'll need to have the following dependencies installed:
 * [Git](https://git-scm.com)
 * [Zsh](https://www.zsh.org)
 * [Btop](https://github.com/aristocratos/btop)
+* [Neovim](https://neovim.io)
+* [Zellij](https://zellij.dev)
 
 ## Features
 
 This project provides a collection of configuration files for a personalized development environment, including:
 
-* Editor configurations (coming soon)
-* Tmux settings (tpm & catppuccin)
-* Btop settings
-* Zsh settings (p10k & zinit)
+* **Tmux settings**: tpm & catppuccin
+* **Btop settings**: theme
+* **Zsh settings**: p10k & zinit
+* **Neovim configuration**: lazy.nvim + codeium
 
 ## Licensing
 
