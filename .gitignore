@@ -1,2 +1,9 @@
+# Log files
 **/*.log
+
+# Tmux plugins
 .config/tmux/plugins
+
+# Neovim files & plugins
+.local/share/nvim
+.local/state
