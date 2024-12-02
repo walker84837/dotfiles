@@ -5,5 +5,4 @@ return {
     'tpope/vim-fugitive',
     'tpope/vim-commentary',
     'tpope/vim-surround',
-    'ctrlpvim/ctrlp.vim',
 }

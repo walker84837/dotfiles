@@ -1,14 +1,7 @@
 require("config.lazy")
 
 -- init.lua
-require('lazy').setup({
-    require('base'),
-    require('lsp'),
-    require('completion'),
-    require('file_explorer'),
-    require('appearance'),
-    require('misc'),
-})
+require('lazy').setup("plugins")
 
 -- Basic settings
 vim.opt.number = true
@@ -21,17 +14,11 @@ vim.opt.smarttab = true
 vim.opt.showmatch = true
 vim.opt.showcmd = true
 
--- Colorscheme
-vim.cmd('colorscheme catppuccin')
-
--- Colorscheme
-vim.cmd('colorscheme catppuccin-frappe')
-
 -- Key bindings
 vim.api.nvim_set_keymap('n', '<S-Down>', ':m .+1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Up>', ':m .-2<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-F>', ':%!rustfmt --edition 2021<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<C-d>', ':%!cmark -t commonmark --width 80<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-F>', ':%!rustfmt --edition 2021<CR>', { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap('n', '<C-d>', ':%!cmark -t commonmark --width 80<CR>', { noremap = true, silent = true })
 
 -- Plugin options
 vim.g.markdown_fenced_languages = { 'rust', 'toml', 'cpp', 'c', 'html', 'python', 'bash=sh' }
@@ -119,24 +106,23 @@ require('lualine').setup {
     extensions = {}
 }
 
-local cmp = require("cmp")
 
-cmp.setup({
+require("cmp").setup({
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            require('luasnip').lsp_expand(args.body)
         end,
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
-        -- documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
         ['<C-f>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.abort(),
-        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
@@ -215,4 +201,3 @@ lspconfig.rust_analyzer.setup({
 require("presence").setup({
     neovim_image_text   = "i use neovim btw",
 })
-

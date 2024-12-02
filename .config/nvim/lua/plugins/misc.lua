@@ -1,6 +1,8 @@
 -- misc.lua
 return {
-    'alx741/vinfo',
+    {
+        'alx741/vinfo',
+	lazy = true
+    }
     'andweeb/presence.nvim',
-    'nvim-lua/plenary.nvim',
 }
