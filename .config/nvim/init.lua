@@ -17,8 +17,6 @@ vim.opt.showcmd = true
 -- Key bindings
 vim.api.nvim_set_keymap('n', '<S-Down>', ':m .+1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Up>', ':m .-2<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<C-F>', ':%!rustfmt --edition 2021<CR>', { noremap = true, silent = true })
--- vim.api.nvim_set_keymap('n', '<C-d>', ':%!cmark -t commonmark --width 80<CR>', { noremap = true, silent = true })
 
 -- Plugin options
 vim.g.markdown_fenced_languages = { 'rust', 'toml', 'cpp', 'c', 'html', 'python', 'bash=sh' }
@@ -106,8 +104,9 @@ require('lualine').setup {
     extensions = {}
 }
 
+local cmp = require("cmp")
 
-require("cmp").setup({
+cmp.setup({
     snippet = {
         expand = function(args)
             require('luasnip').lsp_expand(args.body)
