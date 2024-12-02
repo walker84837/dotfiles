@@ -1,5 +1,9 @@
 # Log files
 **/*.log
+**/*.bak
+
+# Files that change between computers
+.config/kitty/current-theme.conf
 
 # Tmux plugins
 .config/tmux/plugins
