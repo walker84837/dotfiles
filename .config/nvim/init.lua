@@ -23,12 +23,37 @@ vim.g.markdown_fenced_languages = { 'rust', 'toml', 'cpp', 'c', 'html', 'python'
 vim.g.rustfmt_autosave = 1
 vim.g.NeoTreeRefreshToggleHidden = 1
 
+local cmp = require("cmp")
+local luasnip = require('luasnip')
+local lualine = require('lualine')
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local lspconfig = require("lspconfig")
+
+-- Create augroup for resetting indentation
+vim.api.nvim_create_augroup("lua_indent", { clear = true })
+
+-- Set indentation for lua
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "lua",
+    callback = function()
+        vim.opt_local.tabstop = 4
+        vim.opt_local.shiftwidth = 4
+        vim.opt_local.expandtab = true
+    end,
+})
+
+-- Set indentation for hyprlang
+vim.filetype.add({
+    pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
+})
+
+-- Run ripgrep and load results into the quickfix list
 vim.api.nvim_create_user_command('Rg', function(opts)
     local query = opts.args
     local tempfile = vim.fn.tempname()  -- Create a temporary file
 
     -- Execute the rg command and capture its output
-    local command = 'rg -i --vimgrep ' .. vim.fn.shellescape(query)
+    local command = 'rg -L -i --vimgrep ' .. vim.fn.shellescape(query)
     local handle = io.popen(command)
     if not handle then
         print("Failed to execute command: " .. command)
@@ -55,15 +80,16 @@ vim.api.nvim_create_user_command('Rg', function(opts)
 
     -- Load the results into the quickfix list
     vim.cmd('silent! cgetfile ' .. tempfile)
-    
+
     -- Open the quickfix window
     vim.cmd('copen')
-    
+
     -- Clean up the temporary file
     vim.fn.delete(tempfile)
 end, { nargs = 1 })
 
-require('lualine').setup {
+
+lualine.setup {
     options = {
         icons_enabled = true,
         theme = 'auto',
@@ -84,10 +110,10 @@ require('lualine').setup {
     },
     sections = {
         lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_b = {'branch', 'diff', 'fileformat'},
         lualine_c = {'filename'},
-        lualine_x = {'encoding', 'fileformat', 'filetype'},
-        lualine_y = {'progress'},
+        lualine_x = {'diagnostics'},
+        lualine_y = {'encoding', 'filetype'},
         lualine_z = {'location'}
     },
     inactive_sections = {
@@ -104,16 +130,14 @@ require('lualine').setup {
     extensions = {}
 }
 
-local cmp = require("cmp")
-
 cmp.setup({
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     window = {
-        completion = cmp.config.window.bordered(),
+        -- completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
@@ -139,7 +163,6 @@ cmp.setup.filetype('gitcommit', {
         { name = 'buffer' },
     })
 })
-require("cmp_git").setup()
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ '/', '?' }, {
@@ -160,8 +183,6 @@ cmp.setup.cmdline(':', {
     matching = { disallow_symbol_nonprefix_matching = false }
 })
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require("lspconfig")
 local on_attach = function(client)
     require("completion").on_attach(client)
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })

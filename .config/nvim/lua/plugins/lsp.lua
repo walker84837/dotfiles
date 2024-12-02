@@ -14,5 +14,5 @@ return {
     },
     'fatih/vim-go',
     'wstucco/c3.nvim',
-    { 'Exafunction/codeium.vim', branch = 'main' },
+    { 'Exafunction/codeium.vim', event = 'BufEnter' }
 }
