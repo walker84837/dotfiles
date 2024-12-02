@@ -1,3 +1,15 @@
+require("config.lazy")
+
+-- init.lua
+require('lazy').setup({
+    require('base'),
+    require('lsp'),
+    require('completion'),
+    require('file_explorer'),
+    require('appearance'),
+    require('misc'),
+})
+
 -- Basic settings
 vim.opt.number = true
 vim.opt.termguicolors = true
@@ -9,51 +21,8 @@ vim.opt.smarttab = true
 vim.opt.showmatch = true
 vim.opt.showcmd = true
 
--- Plugin management
-require('packer').startup(function(use)
-    -- Core Plugins
-    use 'editorconfig/editorconfig-vim'
-    use 'tpope/vim-sensible'
-    use 'tpope/vim-fugitive'
-    use 'tpope/vim-commentary'
-    use 'tpope/vim-surround'
-    use 'ctrlpvim/ctrlp.vim'
-
-    -- LSP & Language Support
-    use 'neovim/nvim-lspconfig'
-    use 'Decodetalkers/csharpls-extended-lsp.nvim'
-    use 'rust-lang/rust.vim'
-    use 'ziglang/zig.vim'
-    use 'heavenshell/vim-jsdoc'
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-    use 'fatih/vim-go'
-    use 'wstucco/c3.nvim'
-    use { 'Exafunction/codeium.vim', branch = 'main' }
-
-    -- Completion & Snippets
-    use 'hrsh7th/nvim-cmp'
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'petertriho/cmp-git'
-    use 'hrsh7th/cmp-nvim-lsp'
-
-    -- File Explorer & Icons
-    use 'nvim-neo-tree/neo-tree.nvim'
-    use 'nvim-tree/nvim-web-devicons'
-    use 'MunifTanjim/nui.nvim'
-
-    -- Appearance & Themes
-    use 'nvim-lualine/lualine.nvim'
-    use { 'catppuccin/nvim', as = 'catppuccin' }
-    use 'shaunsingh/nord.nvim'
-    use 'shaunsingh/solarized.nvim'
-    use 'walker84837/gruber-darker.vim'
-
-    -- Miscellaneous Plugins
-    use 'alx741/vinfo'
-    use 'andweeb/presence.nvim'
-    use 'nvim-lua/plenary.nvim'
-end)
+-- Colorscheme
+vim.cmd('colorscheme catppuccin')
 
 -- Colorscheme
 vim.cmd('colorscheme catppuccin-frappe')
