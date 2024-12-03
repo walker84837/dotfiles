@@ -1,50 +1,81 @@
 [font]
-size = 12.0
+size = 11.25
 
-[font.bold]
-family = "Iosevka NF"
-style = "SemiBold"
-
-[font.bold_italic]
-family = "Iosevka NF"
-style = "SemiBold Obl"
-
-[font.italic]
-family = "Iosevka NF"
-style = "Light Obl"
-
-[font.normal]
-family = "Iosevka NF"
-style = "Light"
-
-[colors.bright]
-black = "0x373b41"
-blue = "0x81a2be"
-cyan = "0x8abeb7"
-green = "0xb5bd68"
-magenta = "0xb294bb"
-red = "0xcc6666"
-white = "0xc5c8c6"
-yellow = "0xf0c674"
-
-[colors.normal]
-black = "0x282a2e"
-blue = "0x5f819d"
-cyan = "0x5e8d87"
-green = "0x8c9440"
-magenta = "0x85678f"
-red = "0xa54242"
-white = "0x707880"
-yellow = "0xde935f"
+normal = { family = "CommitMono Nerd Font", style = "Regular" }
+italic = { family = "CommitMono Nerd Font", style = "Italic" }
+bold = { family = "CommitMono Nerd Font", style = "Bold" }
+bold_italic = { family = "CommitMono Nerd Font", style = "Bold Italic" }
 
 [colors.primary]
-background = "0x1d1f21"
-foreground = "0xc5c8c6"
+background = "#303446"
+foreground = "#c6d0f5"
+dim_foreground = "#838ba7"
+bright_foreground = "#c6d0f5"
+
+[colors.cursor]
+text = "#303446"
+cursor = "#f2d5cf"
+
+[colors.vi_mode_cursor]
+text = "#303446"
+cursor = "#babbf1"
+
+[colors.search.matches]
+foreground = "#303446"
+background = "#a5adce"
+
+[colors.search.focused_match]
+foreground = "#303446"
+background = "#a6d189"
+
+[colors.footer_bar]
+foreground = "#303446"
+background = "#a5adce"
+
+[colors.hints.start]
+foreground = "#303446"
+background = "#e5c890"
+
+[colors.hints.end]
+foreground = "#303446"
+background = "#a5adce"
+
+[colors.selection]
+text = "#303446"
+background = "#f2d5cf"
+
+[colors.normal]
+black = "#51576d"
+red = "#e78284"
+green = "#a6d189"
+yellow = "#e5c890"
+blue = "#8caaee"
+magenta = "#f4b8e4"
+cyan = "#81c8be"
+white = "#b5bfe2"
+
+[colors.bright]
+black = "#626880"
+red = "#e78284"
+green = "#a6d189"
+yellow = "#e5c890"
+blue = "#8caaee"
+magenta = "#f4b8e4"
+cyan = "#81c8be"
+white = "#a5adce"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#ef9f76"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#f2d5cf"
 
 [window]
 padding = { x = 16, y = 16 }
 opacity = 0.75
-dynamic_title = true
+dynamic_title = false
 
 [cursor]
 style = { shape = "Block" }
