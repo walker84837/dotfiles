@@ -191,7 +191,7 @@ end
 lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.bashls.setup({ capabilities = capabilities })
-lspconfig.java_language_server.setup({ capabilities = capabilities })
+lspconfig.jdtls.setup({ capabilities = capabilities })
 lspconfig.csharp_ls.setup({ capabilities = capabilities })
 
 lspconfig.rust_analyzer.setup({
