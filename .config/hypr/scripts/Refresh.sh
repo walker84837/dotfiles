@@ -1,7 +1,7 @@
 #!/bin/bash
 
 SCRIPTSDIR=$HOME/.config/hypr/scripts
-UserScripts=$HOME/.config/hypr/UserScripts
+user_scripts=$HOME/.config/hypr/user_scripts
 
 # Define file_exists function
 file_exists() {
@@ -36,8 +36,8 @@ ags &
 
 # Relaunching rainbow borders if the script exists
 sleep 1
-# if file_exists "${UserScripts}/RainbowBorders.sh"; then
-#     ${UserScripts}/RainbowBorders.sh &
+# if file_exists "${user_scripts}/RainbowBorders.sh"; then
+#     ${user_scripts}/RainbowBorders.sh &
 # fi
 
 
