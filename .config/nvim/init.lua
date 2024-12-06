@@ -192,7 +192,11 @@ lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.bashls.setup({ capabilities = capabilities })
 lspconfig.jdtls.setup({ capabilities = capabilities })
-lspconfig.omnisharp.setup({ capabilities = capabilities })
+lspconfig.omnisharp.setup({
+    cmd = { "/usr/bin/omnisharp" },
+    on_attach = on_attach,
+    capabilities = capabilities
+})
 
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
