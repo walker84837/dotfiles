@@ -192,7 +192,7 @@ lspconfig.clangd.setup({ capabilities = capabilities })
 lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.bashls.setup({ capabilities = capabilities })
 lspconfig.jdtls.setup({ capabilities = capabilities })
-lspconfig.csharp_ls.setup({ capabilities = capabilities })
+lspconfig.omnisharp.setup({ capabilities = capabilities })
 
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
