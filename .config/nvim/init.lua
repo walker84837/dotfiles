@@ -197,6 +197,7 @@ lspconfig.omnisharp.setup({
     on_attach = on_attach,
     capabilities = capabilities
 })
+lspconfig.metals.setup({ capabilities = capabilities })
 
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
