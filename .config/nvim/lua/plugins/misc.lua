@@ -2,7 +2,8 @@
 return {
     {
         'alx741/vinfo',
-	lazy = true
+        event = 'VeryLazy',
+	    lazy = true
     },
     'andweeb/presence.nvim',
 }
