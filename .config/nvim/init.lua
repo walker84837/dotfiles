@@ -32,9 +32,9 @@ local lspconfig = require("lspconfig")
 -- Create augroup for resetting indentation
 vim.api.nvim_create_augroup("lua_indent", { clear = true })
 
--- Set indentation for lua
+-- Set indentation for languages
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "lua",
+    pattern = {"c", "cpp", "cs", "java", "lua"},
     callback = function()
         vim.opt_local.tabstop = 4
         vim.opt_local.shiftwidth = 4
@@ -93,8 +93,8 @@ lualine.setup {
     options = {
         icons_enabled = true,
         theme = 'auto',
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -172,17 +172,6 @@ cmp.setup.cmdline({ '/', '?' }, {
     }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        { name = 'cmdline' }
-    }),
-    matching = { disallow_symbol_nonprefix_matching = false }
-})
-
 local on_attach = function(client)
     require("completion").on_attach(client)
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
@@ -222,6 +211,26 @@ lspconfig.rust_analyzer.setup({
         }
     }
 })
+
+local original_notify = vim.notify
+
+vim.notify = function(msg, ...)
+    -- Check if the message contains the specific error you want to suppress
+    if msg:find("rust_analyzer: ") then
+        return
+    end
+    -- Call the original notify function for other messages
+    original_notify(msg, ...)
+end
+
+vim.lsp.handlers["window/showMessage"] = function(_, result, ctx)
+    local client = vim.lsp.get_client_by_id(ctx.client_id)
+    if result and result.message and result.message:find("rust_analyzer: ") then
+        return
+    end
+    -- Fallback to the default handler for other messages
+    vim.lsp.handlers["window/showMessage"](nil, result, ctx)
+end
 
 require("presence").setup({
     neovim_image_text   = "i use neovim btw",
