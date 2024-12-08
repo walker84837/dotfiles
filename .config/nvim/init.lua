@@ -172,17 +172,6 @@ cmp.setup.cmdline({ '/', '?' }, {
     }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        { name = 'cmdline' }
-    }),
-    matching = { disallow_symbol_nonprefix_matching = false }
-})
-
 local on_attach = function(client)
     require("completion").on_attach(client)
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
