@@ -212,10 +212,11 @@ lspconfig.rust_analyzer.setup({
     }
 })
 
+-- Store the original notify function
 local original_notify = vim.notify
 
+-- Override the vim.notify function
 vim.notify = function(msg, ...)
-    -- Check if the message contains the specific error you want to suppress
     if msg:find("rust_analyzer: ") then
         return
     end
@@ -223,13 +224,16 @@ vim.notify = function(msg, ...)
     original_notify(msg, ...)
 end
 
+-- Store the original window/showMessage handler
+local original_showMessage = vim.lsp.handlers["window/showMessage"]
+
+-- Override the window/showMessage handler
 vim.lsp.handlers["window/showMessage"] = function(_, result, ctx)
-    local client = vim.lsp.get_client_by_id(ctx.client_id)
     if result and result.message and result.message:find("rust_analyzer: ") then
         return
     end
     -- Fallback to the default handler for other messages
-    vim.lsp.handlers["window/showMessage"](nil, result, ctx)
+    original_showMessage(_, result, ctx)
 end
 
 require("presence").setup({
