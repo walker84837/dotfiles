@@ -1,0 +1,52 @@
+[language-server.gpt]
+command = "helix-gpt"
+args = ["--handler", "codeium"]
+
+[[language]]
+name = "c"
+file-types = ["c", "h"]
+indent = { tab-width = 4, unit = "    " }
+
+[language-server.rust]
+command = "rust-analyzer"
+language-id = "rust"
+
+[[language]]
+name = "rust"
+language-servers = [
+    "rust",
+    "gpt"
+]
+
+[language-server.go]
+command = "gopls"
+language-id = "go"
+
+[[language]]
+name = "go"
+language-servers = [
+    "go",
+    "gpt"
+]
+
+[language-server.java]
+command = "jdtls"
+language-id = "java"
+
+[[language]]
+name = "java"
+language-servers = [
+    "java",
+    "gpt"
+]
+
+[language-server.zig]
+command = "zls"
+language-id = "zig"
+
+[[language]]
+name = "zig"
+language-servers = [
+    "zig",
+    "gpt"
+]
