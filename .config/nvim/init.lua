@@ -47,48 +47,6 @@ vim.filetype.add({
     pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
 
--- Run ripgrep and load results into the quickfix list
-vim.api.nvim_create_user_command('Rg', function(opts)
-    local query = opts.args
-    local tempfile = vim.fn.tempname()  -- Create a temporary file
-
-    -- Execute the rg command and capture its output
-    local command = 'rg -L -i --vimgrep ' .. vim.fn.shellescape(query)
-    local handle = io.popen(command)
-    if not handle then
-        print("Failed to execute command: " .. command)
-        return
-    end
-    local output = handle:read('*a')
-    handle:close()
-
-    -- Check if output is empty
-    if output == '' then
-        print("No results found for query: " .. query)
-        return
-    end
-
-    -- Write output to the temporary file
-    local file = io.open(tempfile, 'w')
-    if file then
-        file:write(output)
-        file:close()
-    else
-        print("Failed to write to file: " .. tempfile)
-        return
-    end
-
-    -- Load the results into the quickfix list
-    vim.cmd('silent! cgetfile ' .. tempfile)
-
-    -- Open the quickfix window
-    vim.cmd('copen')
-
-    -- Clean up the temporary file
-    vim.fn.delete(tempfile)
-end, { nargs = 1 })
-
-
 lualine.setup {
     options = {
         icons_enabled = true,
@@ -187,6 +145,33 @@ lspconfig.omnisharp.setup({
     capabilities = capabilities
 })
 lspconfig.metals.setup({ capabilities = capabilities })
+lspconfig.lua_ls.setup({
+    on_init = function(client)
+        if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+                return
+            end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+            runtime = {
+                version = 'LuaJIT'
+            },
+            -- Make the server aware of Neovim runtime files
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME
+                }
+            }
+        })
+    end,
+    capabilities = capabilities,
+    settings = {
+        Lua = {}
+    }
+})
 
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
