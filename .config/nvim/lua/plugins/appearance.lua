@@ -11,7 +11,7 @@ return {
         end,
     },
     -- Other colorschemes
-    -- 'shaunsingh/nord.nvim',
+    'walker84837/monotheme.nvim',
+    'walker84837/gruber-darker.nvim',
     -- 'shaunsingh/solarized.nvim',
-    -- 'walker84837/gruber-darker.vim',
 }

@@ -48,6 +48,7 @@ alias tree="exa --tree"
 alias bc="bc -ql"
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
+alias xcd='cd "$(xplr)"'
 
 # Plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k

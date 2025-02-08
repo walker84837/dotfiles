@@ -15,8 +15,14 @@ vim.opt.showmatch = true
 vim.opt.showcmd = true
 
 -- Key bindings
+
+-- Move lines
 vim.api.nvim_set_keymap('n', '<S-Down>', ':m .+1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Up>', ':m .-2<CR>', { noremap = true, silent = true })
+
+-- Open file browsers
+vim.api.nvim_set_keymap('n', "<Leader>f", ":Neotree right<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', "<Leader>s", ":Telescope find_files<CR>", { noremap = true, silent = true })
 
 -- Plugin options
 vim.g.markdown_fenced_languages = { 'rust', 'toml', 'cpp', 'c', 'html', 'python', 'bash=sh' }
