@@ -41,7 +41,7 @@ bindkey '^p' history-search-forward
 bindkey '^n' history-search-backward
 
 # Aliases
-alias ls="exa"
+alias ls="exa --icons --grid"
 alias clock="tty-clock -SscC 4"
 alias cat="bat -Pp"
 alias tree="exa --tree"
