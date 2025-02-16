@@ -13,5 +13,8 @@ return {
     -- Other colorschemes
     'walker84837/monotheme.nvim',
     'walker84837/gruber-darker.nvim',
-    -- 'shaunsingh/solarized.nvim',
+    {
+        "rose-pine/neovim",
+        name = "rose-pine",
+    }
 }
