@@ -136,9 +136,15 @@ cmp.setup.cmdline({ '/', '?' }, {
     }
 })
 
-local on_attach = function(client)
-    require("completion").on_attach(client)
+local on_attach = function()
+    local bufnr = vim.api.nvim_get_current_buf()
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+        buffer = bufnr,
+        callback = function()
+            vim.lsp.buf.format({ async = false })
+        end
+    })
 end
 
 lspconfig.clangd.setup({ capabilities = capabilities })
@@ -146,7 +152,7 @@ lspconfig.gopls.setup({ capabilities = capabilities })
 lspconfig.bashls.setup({ capabilities = capabilities })
 lspconfig.jdtls.setup({ capabilities = capabilities })
 lspconfig.omnisharp.setup({
-    cmd = { "/usr/bin/omnisharp" },
+    cmd = { "/usr/bin/omnisharp", "--languageserver" },
     on_attach = on_attach,
     capabilities = capabilities
 })
@@ -179,6 +185,10 @@ lspconfig.lua_ls.setup({
     }
 })
 
+lspconfig.kotlin_language_server.setup({
+    filetypes = {"kotlin", "kt"}
+})
+
 lspconfig.rust_analyzer.setup({
     capabilities = capabilities,
     on_attach = on_attach,
@@ -203,29 +213,33 @@ lspconfig.rust_analyzer.setup({
     }
 })
 
--- Store the original notify function
-local original_notify = vim.notify
+local function ignore_rust_analyzer_errors()
+    -- Store the original notify function
+    local original_notify = vim.notify
 
--- Override the vim.notify function
-vim.notify = function(msg, ...)
-    if msg:find("rust_analyzer: ") then
-        return
+    -- Override the vim.notify function
+    vim.notify = function(msg, ...)
+        if msg:find("rust_analyzer: ") then
+            return
+        end
+        -- Call the original notify function for other messages
+        original_notify(msg, ...)
     end
-    -- Call the original notify function for other messages
-    original_notify(msg, ...)
+
+    -- Store the original window/showMessage handler
+    local original_showMessage = vim.lsp.handlers["window/showMessage"]
+
+    -- Override the window/showMessage handler
+    vim.lsp.handlers["window/showMessage"] = function(_, result, ctx)
+        if result and result.message and result.message:find("rust_analyzer: ") then
+            return
+        end
+        -- Fallback to the default handler for other messages
+        original_showMessage(_, result, ctx)
+    end
 end
 
--- Store the original window/showMessage handler
-local original_showMessage = vim.lsp.handlers["window/showMessage"]
-
--- Override the window/showMessage handler
-vim.lsp.handlers["window/showMessage"] = function(_, result, ctx)
-    if result and result.message and result.message:find("rust_analyzer: ") then
-        return
-    end
-    -- Fallback to the default handler for other messages
-    original_showMessage(_, result, ctx)
-end
+ignore_rust_analyzer_errors()
 
 require("presence").setup({
     neovim_image_text   = "i use neovim btw",
