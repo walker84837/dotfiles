@@ -40,7 +40,7 @@ vim.api.nvim_create_augroup("lua_indent", { clear = true })
 
 -- Set indentation for languages
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"c", "cpp", "cs", "java", "lua"},
+    pattern = {"c", "cpp", "cs", "java", "lua", "kt"},
     callback = function()
         vim.opt_local.tabstop = 4
         vim.opt_local.shiftwidth = 4
@@ -154,7 +154,13 @@ lspconfig.jdtls.setup({ capabilities = capabilities })
 lspconfig.omnisharp.setup({
     cmd = { "/usr/bin/omnisharp", "--languageserver" },
     on_attach = on_attach,
-    capabilities = capabilities
+    capabilities = capabilities,
+    handlers = {
+        ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
+        ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
+        ["textDocument/references"] = require('omnisharp_extended').references_handler,
+        ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
+    },
 })
 lspconfig.metals.setup({ capabilities = capabilities })
 lspconfig.lua_ls.setup({
