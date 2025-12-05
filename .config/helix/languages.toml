@@ -31,3 +31,7 @@ auto-format = true
 name = "c"
 file-types = ["c", "h"]
 indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "scala"
+indent = { tab-width = 4, unit = "    " }
