@@ -24,6 +24,10 @@ vim.api.nvim_set_keymap('n', '<S-Up>', ':m .-2<CR>', { noremap = true, silent = 
 vim.api.nvim_set_keymap('n', "<Leader>f", ":Neotree right<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', "<Leader>s", ":Telescope find_files<CR>", { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<Leader>y", '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>Y", '"+Y', { noremap = true, silent = true })
+
 -- Plugin options
 vim.g.markdown_fenced_languages = { 'rust', 'toml', 'cpp', 'c', 'html', 'python', 'bash=sh' }
 vim.g.rustfmt_autosave = 1
@@ -33,14 +37,14 @@ local cmp = require("cmp")
 local luasnip = require('luasnip')
 local lualine = require('lualine')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
 
 -- Create augroup for resetting indentation
 vim.api.nvim_create_augroup("lua_indent", { clear = true })
 
 -- Set indentation for languages
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"c", "cpp", "cs", "java", "lua", "kt"},
+    pattern = { "c", "cpp", "cs", "kotlin", "java", "lua" },
     callback = function()
         vim.opt_local.tabstop = 4
         vim.opt_local.shiftwidth = 4
@@ -73,18 +77,18 @@ lualine.setup {
         }
     },
     sections = {
-        lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'fileformat'},
-        lualine_c = {'filename'},
-        lualine_x = {'diagnostics'},
-        lualine_y = {'encoding', 'filetype'},
-        lualine_z = {'location'}
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'fileformat' },
+        lualine_c = { 'filename' },
+        lualine_x = { 'diagnostics' },
+        lualine_y = { 'encoding', 'filetype' },
+        lualine_z = { 'location' }
     },
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
         lualine_y = {},
         lualine_z = {}
     },
@@ -136,25 +140,62 @@ cmp.setup.cmdline({ '/', '?' }, {
     }
 })
 
-local on_attach = function()
-    local bufnr = vim.api.nvim_get_current_buf()
+local on_attach = function(client, bufnr)
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
-    vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = bufnr,
-        callback = function()
-            vim.lsp.buf.format({ async = false })
-        end
+
+    -- compile list of lsp servers to ignore formatting
+    if client.name ~= "kotlin_language_server" then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format({ async = false, bufnr = bufnr })
+            end,
+        })
+    end
+end
+
+local lsp_servers = {
+    "clangd", "gopls", "bashls", "jdtls", "omnisharp", "rust_analyzer",
+    "kotlin_language_server", "metals", "lua_ls", "zls", "ruff"
+}
+
+for _, provider in ipairs(lsp_servers) do
+    vim.lsp.config(provider, {
+        on_attach = on_attach,
+        capabilities = capabilities,
     })
 end
 
-lspconfig.clangd.setup({ capabilities = capabilities })
-lspconfig.gopls.setup({ capabilities = capabilities })
-lspconfig.bashls.setup({ capabilities = capabilities })
-lspconfig.jdtls.setup({ capabilities = capabilities })
-lspconfig.omnisharp.setup({
+vim.lsp.config("jdtls", {
+    settings = {
+        java = { format = { enabled = false }, },
+    },
+})
+
+vim.lsp.config("kotlin_language_server", {
+    settings = {
+        java = { format = { enabled = false }, },
+    },
+})
+
+vim.lsp.config("zls", {
+    settings = {
+        zls = {
+            enable_build_on_save = true,
+            semantic_tokens = "full",
+        },
+    },
+})
+
+-- vim.lsp.config("clangd", {
+--     -- '--background-index'
+--     cmd = { 'clangd', '--experimental-modules-support' },
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+-- })
+
+vim.lsp.config("omnisharp", {
     cmd = { "/usr/bin/omnisharp", "--languageserver" },
-    on_attach = on_attach,
-    capabilities = capabilities,
     handlers = {
         ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
         ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
@@ -162,12 +203,11 @@ lspconfig.omnisharp.setup({
         ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
     },
 })
-lspconfig.metals.setup({ capabilities = capabilities })
-lspconfig.lua_ls.setup({
+vim.lsp.config("lua_ls", {
     on_init = function(client)
         if client.workspace_folders then
             local path = client.workspace_folders[1].name
-            if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
+            if vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc') then
                 return
             end
         end
@@ -185,20 +225,17 @@ lspconfig.lua_ls.setup({
             }
         })
     end,
-    capabilities = capabilities,
     settings = {
         Lua = {}
     }
 })
 
-lspconfig.kotlin_language_server.setup({
-    filetypes = {"kotlin", "kt"}
+vim.lsp.config("kotlin_language_server", {
+    filetypes = { "kotlin", "kt" }
 })
 
-lspconfig.rust_analyzer.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("Cargo.toml"),
+vim.lsp.config("rust_analyzer", {
+    root_pattern = vim.fs.root(0, { "Cargo.toml", "" }),
     settings = {
         ["rust-analyzer"] = {
             imports = {
@@ -248,5 +285,9 @@ end
 ignore_rust_analyzer_errors()
 
 require("presence").setup({
-    neovim_image_text   = "i use neovim btw",
+    neovim_image_text = "i use neovim btw",
 })
+
+for _, server in ipairs(lsp_servers) do
+    vim.lsp.enable(server)
+end
