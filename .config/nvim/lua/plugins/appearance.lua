@@ -6,9 +6,6 @@ return {
         lazy = false,
         priority = 1000,
         'catppuccin/nvim', as = 'catppuccin',
-        config = function()
-            vim.cmd('colorscheme catppuccin-mocha')
-        end,
     },
     -- Other colorschemes
     'walker84837/monotheme.nvim',
@@ -16,5 +13,8 @@ return {
     {
         "rose-pine/neovim",
         name = "rose-pine",
+        config = function()
+            vim.cmd('colorscheme rose-pine')
+        end,
     }
 }
