@@ -15,7 +15,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 # Set up environment variables early
-export PATH="/home/$USER/.local/bin:/home/$USER/.local/share/coursier/bin:$PATH"
+export PATH="/home/$USER/.cargo/bin:/home/$USER/.local/share/bin:/home/$USER/.local/scripts:$PATH"
 export GOPATH=~/.cache/go
 
 # Source Commands
@@ -49,6 +49,7 @@ alias bc="bc -ql"
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias xcd='cd "$(xplr)"'
+alias hx=helix
 
 # Plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -74,18 +75,6 @@ clr_scrollback() {
 	clear
 }
 
-rename_files() {
-	counter=1
-	for file in *; do
-		if [[ -f "$file" ]]; then
-			extension="${file##*.}"
-			new_name=$(printf "%03d" "$counter")
-			mv "$file" "$new_name"
-			((counter++))
-		fi
-	done
-}
-
 add_identity() {
 	eval "$(ssh-agent -s)"
 	ssh-add ~/.ssh/id_github
@@ -108,6 +97,12 @@ gif2mp4() {
 	path_stripped="${orig_path%.*}"
 
 	ffmpeg -y -i "$orig_path" -c:v libvpx-vp9 -b:v 0 -crf 18 -vf "scale=-1:$2,fps=30" -pix_fmt yuv420p "$path_stripped.mp4" || return
+}
+
+fix_ipv4() {
+	nmcli connection modify 'Ethernet connection 1' ipv4.never-default no
+	nmcli connection modify 'Ethernet connection 1' ipv4.method auto
+	nmcli connection up 'Ethernet connection 1'
 }
 
 change_wallpaper() {
