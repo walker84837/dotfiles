@@ -20,7 +20,8 @@ hidden = false
 git-ignore = true
 
 [editor.indent-guides]
-character = "╎"
+# character = "╎"
+character = "┃"
 render = true
 
 [editor.statusline]

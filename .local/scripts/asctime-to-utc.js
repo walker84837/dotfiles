@@ -11,13 +11,12 @@ function asctimeToUtcIso8601(input) {
         throw new Error(`Could not parse date string: "${input}"`);
     }
 
-    // Format as ISO 8601 with second precision (no milliseconds)
+    // format as ISO 8601 with second precision (no milliseconds)
     return date.toISOString().replace(/\.\d+Z$/, 'Z');
 }
 
-// Main script logic
 if (require.main === module) {
-    // Join all command-line arguments (skip node and script path)
+    // join all command-line arguments, skipping node and script path
     const args = process.argv.slice(2);
 
     if (args.length === 0) {
@@ -37,5 +36,5 @@ if (require.main === module) {
     }
 }
 
-// Export for testing or modular use
+// export for testing or modular use, idk
 module.exports = asctimeToUtcIso8601;
