@@ -15,7 +15,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 # Set up environment variables early
-export PATH="/home/$USER/.cargo/bin:/home/$USER/.local/share/bin:/home/$USER/.local/scripts:$PATH"
+export PATH="/home/$USER/.cargo/bin:/home/$USER/.local/share/bin:/home/$USER/.local/share/scripts:$PATH"
 export GOPATH=~/.cache/go
 
 # Source Commands
