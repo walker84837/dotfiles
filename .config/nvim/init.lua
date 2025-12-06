@@ -15,8 +15,18 @@ vim.opt.showmatch = true
 vim.opt.showcmd = true
 
 -- Key bindings
+
+-- Move lines
 vim.api.nvim_set_keymap('n', '<S-Down>', ':m .+1<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<S-Up>', ':m .-2<CR>', { noremap = true, silent = true })
+
+-- Open file browsers
+vim.api.nvim_set_keymap('n', "<Leader>f", ":Neotree right<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', "<Leader>s", ":Telescope find_files<CR>", { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<Leader>y", '"+y', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>Y", '"+Y', { noremap = true, silent = true })
 
 -- Plugin options
 vim.g.markdown_fenced_languages = { 'rust', 'toml', 'cpp', 'c', 'html', 'python', 'bash=sh' }
@@ -27,14 +37,14 @@ local cmp = require("cmp")
 local luasnip = require('luasnip')
 local lualine = require('lualine')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
 
 -- Create augroup for resetting indentation
 vim.api.nvim_create_augroup("lua_indent", { clear = true })
 
--- Set indentation for lua
+-- Set indentation for languages
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = "lua",
+    pattern = { "c", "cpp", "cs", "kotlin", "java", "lua" },
     callback = function()
         vim.opt_local.tabstop = 4
         vim.opt_local.shiftwidth = 4
@@ -47,54 +57,12 @@ vim.filetype.add({
     pattern = { [".*/hypr/.*%.conf"] = "hyprlang" },
 })
 
--- Run ripgrep and load results into the quickfix list
-vim.api.nvim_create_user_command('Rg', function(opts)
-    local query = opts.args
-    local tempfile = vim.fn.tempname()  -- Create a temporary file
-
-    -- Execute the rg command and capture its output
-    local command = 'rg -L -i --vimgrep ' .. vim.fn.shellescape(query)
-    local handle = io.popen(command)
-    if not handle then
-        print("Failed to execute command: " .. command)
-        return
-    end
-    local output = handle:read('*a')
-    handle:close()
-
-    -- Check if output is empty
-    if output == '' then
-        print("No results found for query: " .. query)
-        return
-    end
-
-    -- Write output to the temporary file
-    local file = io.open(tempfile, 'w')
-    if file then
-        file:write(output)
-        file:close()
-    else
-        print("Failed to write to file: " .. tempfile)
-        return
-    end
-
-    -- Load the results into the quickfix list
-    vim.cmd('silent! cgetfile ' .. tempfile)
-
-    -- Open the quickfix window
-    vim.cmd('copen')
-
-    -- Clean up the temporary file
-    vim.fn.delete(tempfile)
-end, { nargs = 1 })
-
-
 lualine.setup {
     options = {
         icons_enabled = true,
         theme = 'auto',
-        component_separators = { left = '', right = ''},
-        section_separators = { left = '', right = ''},
+        component_separators = { left = '', right = '' },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -109,18 +77,18 @@ lualine.setup {
         }
     },
     sections = {
-        lualine_a = {'mode'},
-        lualine_b = {'branch', 'diff', 'fileformat'},
-        lualine_c = {'filename'},
-        lualine_x = {'diagnostics'},
-        lualine_y = {'encoding', 'filetype'},
-        lualine_z = {'location'}
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'fileformat' },
+        lualine_c = { 'filename' },
+        lualine_x = { 'diagnostics' },
+        lualine_y = { 'encoding', 'filetype' },
+        lualine_z = { 'location' }
     },
     inactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = {'filename'},
-        lualine_x = {'location'},
+        lualine_c = { 'filename' },
+        lualine_x = { 'location' },
         lualine_y = {},
         lualine_z = {}
     },
@@ -172,32 +140,102 @@ cmp.setup.cmdline({ '/', '?' }, {
     }
 })
 
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-        { name = 'path' }
-    }, {
-        { name = 'cmdline' }
-    }),
-    matching = { disallow_symbol_nonprefix_matching = false }
-})
-
-local on_attach = function(client)
-    require("completion").on_attach(client)
+local on_attach = function(client, bufnr)
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+
+    -- compile list of lsp servers to ignore formatting
+    if client.name ~= "kotlin_language_server" then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = bufnr,
+            callback = function()
+                vim.lsp.buf.format({ async = false, bufnr = bufnr })
+            end,
+        })
+    end
 end
 
-lspconfig.clangd.setup({ capabilities = capabilities })
-lspconfig.gopls.setup({ capabilities = capabilities })
-lspconfig.bashls.setup({ capabilities = capabilities })
-lspconfig.java_language_server.setup({ capabilities = capabilities })
-lspconfig.csharp_ls.setup({ capabilities = capabilities })
+local lsp_servers = {
+    "clangd", "gopls", "bashls", "jdtls", "omnisharp", "rust_analyzer",
+    "kotlin_language_server", "metals", "lua_ls", "zls", "ruff"
+}
 
-lspconfig.rust_analyzer.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    root_dir = lspconfig.util.root_pattern("Cargo.toml"),
+for _, provider in ipairs(lsp_servers) do
+    vim.lsp.config(provider, {
+        on_attach = on_attach,
+        capabilities = capabilities,
+    })
+end
+
+vim.lsp.config("jdtls", {
+    settings = {
+        java = { format = { enabled = false }, },
+    },
+})
+
+vim.lsp.config("kotlin_language_server", {
+    settings = {
+        java = { format = { enabled = false }, },
+    },
+})
+
+vim.lsp.config("zls", {
+    settings = {
+        zls = {
+            enable_build_on_save = true,
+            semantic_tokens = "full",
+        },
+    },
+})
+
+-- vim.lsp.config("clangd", {
+--     -- '--background-index'
+--     cmd = { 'clangd', '--experimental-modules-support' },
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+-- })
+
+vim.lsp.config("omnisharp", {
+    cmd = { "/usr/bin/omnisharp", "--languageserver" },
+    handlers = {
+        ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
+        ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
+        ["textDocument/references"] = require('omnisharp_extended').references_handler,
+        ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
+    },
+})
+vim.lsp.config("lua_ls", {
+    on_init = function(client)
+        if client.workspace_folders then
+            local path = client.workspace_folders[1].name
+            if vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc') then
+                return
+            end
+        end
+
+        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+            runtime = {
+                version = 'LuaJIT'
+            },
+            -- Make the server aware of Neovim runtime files
+            workspace = {
+                checkThirdParty = false,
+                library = {
+                    vim.env.VIMRUNTIME
+                }
+            }
+        })
+    end,
+    settings = {
+        Lua = {}
+    }
+})
+
+vim.lsp.config("kotlin_language_server", {
+    filetypes = { "kotlin", "kt" }
+})
+
+vim.lsp.config("rust_analyzer", {
+    root_pattern = vim.fs.root(0, { "Cargo.toml", "" }),
     settings = {
         ["rust-analyzer"] = {
             imports = {
@@ -218,6 +256,38 @@ lspconfig.rust_analyzer.setup({
     }
 })
 
+local function ignore_rust_analyzer_errors()
+    -- Store the original notify function
+    local original_notify = vim.notify
+
+    -- Override the vim.notify function
+    vim.notify = function(msg, ...)
+        if msg:find("rust_analyzer: ") then
+            return
+        end
+        -- Call the original notify function for other messages
+        original_notify(msg, ...)
+    end
+
+    -- Store the original window/showMessage handler
+    local original_showMessage = vim.lsp.handlers["window/showMessage"]
+
+    -- Override the window/showMessage handler
+    vim.lsp.handlers["window/showMessage"] = function(_, result, ctx)
+        if result and result.message and result.message:find("rust_analyzer: ") then
+            return
+        end
+        -- Fallback to the default handler for other messages
+        original_showMessage(_, result, ctx)
+    end
+end
+
+ignore_rust_analyzer_errors()
+
 require("presence").setup({
-    neovim_image_text   = "i use neovim btw",
+    neovim_image_text = "i use neovim btw",
 })
+
+for _, server in ipairs(lsp_servers) do
+    vim.lsp.enable(server)
+end

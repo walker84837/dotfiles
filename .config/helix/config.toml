@@ -1,0 +1,43 @@
+theme = "horizon-dark"
+
+[editor]
+line-number = "relative"
+true-color = true
+mouse = false
+cursorline = true  # Highlights the current line
+rulers = [100]  # Displays a vertical line at the 80th character column
+scrolloff = 8  # Keeps 8 lines visible above and below the cursor
+soft-wrap.enable = true  # Enables soft wrapping of long lines
+end-of-line-diagnostics = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+
+[editor.indent-guides]
+# character = "╎"
+character = "┃"
+render = true
+
+[editor.statusline]
+left = ["spinner", "mode", "version-control", "file-name"]
+center = ["position"]
+right = ["file-type", "file-encoding", "file-line-ending"]
+separator = ""
+
+[editor.inline-diagnostics]
+cursor-line = "error"
+
+[editor.lsp]
+display-messages = true
+auto-signature-help = true
+display-inlay-hints = true
+
+[keys.normal]
+S-l = ":buffer-next"  # Shift + l to switch to the next buffer
+S-h = ":buffer-previous"  # Shift + h to switch to the previous buffer

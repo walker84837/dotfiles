@@ -9,7 +9,7 @@ To get started with this project, you'll need to clone the repository and instal
 
 ```shell
 $ cd ~
-$ git clone --recurse-submodules https://winlogon.ddns.net/winlogon/dotfiles.git
+$ git clone --recurse-submodules https://github.com/walker84837/dotfiles.git
 ```
 
 This command clones the repository and initializes the submodules. Once the cloning has finished:
@@ -19,16 +19,30 @@ $ cd dotfiles
 $ stow --adopt .
 ```
 
+## Dependencies
+
+
+
 ### Initial Configuration
 
 To use this project, you'll need to have the following dependencies installed:
 
-* [GNU stow](https://www.gnu.org/software/stow)
-* [Git](https://git-scm.com)
+#### Basic dependencies
+
+* [GNU stow](https://www.gnu.org/software/stow) to manage configuration files
 * [Zsh](https://www.zsh.org)
+  * Change your user's shell with: `chsh -s /bin/zsh`
+  * Log out and log back in to make the change take effect
+* [eza](https://github.com/eza-community/eza) for `ls` and better appearance
+* [zoxide](https://github.com/ajeetdsouza/zoxide) for `cd` and efficient navigation
+
+#### Full dependencies
+
+* [Git](https://git-scm.com)
 * [Btop](https://github.com/aristocratos/btop)
 * [Neovim](https://neovim.io)
-* [Zellij](https://zellij.dev)
+* [Zellij](https://zellij.dev) 
+* Any [Nerd Font](https://www.nerdfonts.com), but I recommend Iosevka or JetBrains Mono.
 
 ## Features
 

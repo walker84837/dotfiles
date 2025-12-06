@@ -1,7 +1,7 @@
 -- lsp.lua
 return {
     'neovim/nvim-lspconfig',
-    'Decodetalkers/csharpls-extended-lsp.nvim',
+    'Hoffs/omnisharp-extended-lsp.nvim',
     'rust-lang/rust.vim',
     'ziglang/zig.vim',
     'heavenshell/vim-jsdoc',

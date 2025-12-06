@@ -15,7 +15,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
 fi
 
 # Set up environment variables early
-export PATH="/home/$USER/.local/bin:$PATH"
+export PATH="/home/$USER/.cargo/bin:/home/$USER/.local/share/bin:/home/$USER/.local/share/scripts:$PATH"
 export GOPATH=~/.cache/go
 
 # Source Commands
@@ -41,13 +41,15 @@ bindkey '^p' history-search-forward
 bindkey '^n' history-search-backward
 
 # Aliases
-alias ls="exa"
+alias ls="exa --icons --grid"
 alias clock="tty-clock -SscC 4"
 alias cat="bat -Pp"
 alias tree="exa --tree"
 alias bc="bc -ql"
 alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
+alias xcd='cd "$(xplr)"'
+alias hx=helix
 
 # Plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -73,18 +75,6 @@ clr_scrollback() {
 	clear
 }
 
-rename_files() {
-	counter=1
-	for file in *; do
-		if [[ -f "$file" ]]; then
-			extension="${file##*.}"
-			new_name=$(printf "%03d" "$counter")
-			mv "$file" "$new_name"
-			((counter++))
-		fi
-	done
-}
-
 add_identity() {
 	eval "$(ssh-agent -s)"
 	ssh-add ~/.ssh/id_github
@@ -92,45 +82,27 @@ add_identity() {
 }
 
 gif2mp4() {
+	if [[ "$1" == "--help" ]]; then
+		echo "Usage: gif2mp4 <path_to_gif> <resolution :: optional [720p]>"
+		echo "Example (720p): gif2mp4 test.gif 720"
+		return
+	fi
+	local resolution
+	if [[ -z "$2" ]]; then
+		resolution=720
+	else
+		resolution=$2
+	fi
 	orig_path=$1
 	path_stripped="${orig_path%.*}"
 
-	ffmpeg -y -i $1 -c:v h264_vaapi -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" "$path_stripped.mp4" || return
+	ffmpeg -y -i "$orig_path" -c:v libvpx-vp9 -b:v 0 -crf 18 -vf "scale=-1:$2,fps=30" -pix_fmt yuv420p "$path_stripped.mp4" || return
 }
 
-discord_upgrade() {
-	DISCORD_INSTALL="/opt/discord"
-
-	# Step 1: Remove Discord install to remove conflicting files
-	printf "Removing Discord install at $DISCORD_INSTALL...\n"
-	sudo rm -rf "$DISCORD_INSTALL" || return
-
-	# Step 2: Download the Vencord installer by getting the executable file from the POSIX sh script.
-	printf "Extracting installer path from POSIX sh script...\n"
-	INSTALLER_URL=$(curl -Ss https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh | grep -o 'http[s]*://[^"]*' | awk 'NR==1' | sed 's/\\$//' | sed 's/\s*$//') || return
-
-	# Step 2-1: Get the file path from the download link in the POSIX sh script.
-	printf "Getting file name from URL...\n"
-	INSTALLER_PATH=$(mktemp)
-
-	# Step 3: Download the Vencord installer
-	wget "$INSTALLER_URL" -O "$INSTALLER_PATH"
-	chmod 755 "$INSTALLER_PATH"
-
-	# Step 4: Reinstall Discord and download basic modules
-	sudo pacman --noconfirm -S discord
-	timeout 5m bash -c 'discord > /dev/null'
-
-	# Step 5: Install Vencord on the Discord installation
-	printf "Installing Vencord to '$DISCORD_INSTALL'...\n"
-	sudo $INSTALLER_PATH -install -location "$DISCORD_INSTALL"
-	printf "Installing OpenAsar to '$DISCORD_INSTALL'...\n"
-	sudo $INSTALLER_PATH -install-openasar -location "$DISCORD_INSTALL"
-
-	# Step 6: Clean up temporary files
-	printf "Cleaning up temporary files...\n"
-	printf "Removing $INSTALLER_PATH...\n"
-	rm -rf "$INSTALLER_PATH" || return
+fix_ipv4() {
+	nmcli connection modify 'Ethernet connection 1' ipv4.never-default no
+	nmcli connection modify 'Ethernet connection 1' ipv4.method auto
+	nmcli connection up 'Ethernet connection 1'
 }
 
 change_wallpaper() {
