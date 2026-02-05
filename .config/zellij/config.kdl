@@ -73,7 +73,7 @@ plugins {
 
 // Default shell to use for new panes
 default_shell "zsh"
-default_cwd "/home/walker84837"  // Default CWD for new panes
+default_cwd "/home/winlogon"
 
 // Define theme
 theme "catppuccin-mocha"
@@ -82,7 +82,7 @@ theme "catppuccin-mocha"
 default_layout "compact"
 
 // Set the default editor
-default_editor "nvim"  // Use Neovim as the default editor
+default_editor "nvim"
 
 // Choose the mode to start in
 default_mode "normal"

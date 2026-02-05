@@ -37,14 +37,13 @@ local cmp = require("cmp")
 local luasnip = require('luasnip')
 local lualine = require('lualine')
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
--- local lspconfig = require("lspconfig")
 
 -- Create augroup for resetting indentation
 vim.api.nvim_create_augroup("lua_indent", { clear = true })
 
--- Set indentation for languages
+-- Set indentation for languages (4 spaces)
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c", "cpp", "cs", "kotlin", "java", "lua" },
+    pattern = { "c", "cpp", "cs", "kotlin", "java", "lua", "javascript" },
     callback = function()
         vim.opt_local.tabstop = 4
         vim.opt_local.shiftwidth = 4
@@ -105,7 +104,6 @@ cmp.setup({
         end,
     },
     window = {
-        -- completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
@@ -156,7 +154,7 @@ end
 
 local lsp_servers = {
     "clangd", "gopls", "bashls", "jdtls", "omnisharp", "rust_analyzer",
-    "kotlin_language_server", "metals", "lua_ls", "zls", "ruff"
+    "kotlin_language_server", "metals", "lua_ls", "zls", "ruff", "vtsls"
 }
 
 for _, provider in ipairs(lsp_servers) do
@@ -168,7 +166,13 @@ end
 
 vim.lsp.config("jdtls", {
     settings = {
-        java = { format = { enabled = false }, },
+        java = {
+            format = { enabled = false },
+            import = {
+                gradle = { enabled = true, wrapper = { enabled = true } },
+                maven = { enabled = true },
+            },
+        },
     },
 })
 
@@ -176,6 +180,12 @@ vim.lsp.config("kotlin_language_server", {
     settings = {
         java = { format = { enabled = false }, },
     },
+})
+
+vim.lsp.config("vtsls", {
+    -- https://github.com/yioneko/vtsls
+    cmd = { 'vtsls', '--stdio' },
+    filetypes = { 'javascript' }
 })
 
 vim.lsp.config("zls", {

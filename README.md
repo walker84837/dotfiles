@@ -1,4 +1,5 @@
 # dotfiles
+
 > A collection of configuration files for a personalized development environment
 
 This repository contains the configurations of the applications I use on my computers to create a seamless development environment.
@@ -21,7 +22,7 @@ $ stow --adopt .
 
 ## Dependencies
 
-
+Some scripts in [`.local/share/scripts`](https://github.com/walker84837/dotfiles/tree/master/.local/share/scripts) are written in JavaScript and require [Node.js](https://nodejs.org) to be installed.
 
 ### Initial Configuration
 
@@ -35,6 +36,7 @@ To use this project, you'll need to have the following dependencies installed:
   * Log out and log back in to make the change take effect
 * [eza](https://github.com/eza-community/eza) for `ls` and better appearance
 * [zoxide](https://github.com/ajeetdsouza/zoxide) for `cd` and efficient navigation
+* [fzf](https://github.com/junegunn/fzf) for fuzzy search on shell completion
 
 #### Full dependencies
 
