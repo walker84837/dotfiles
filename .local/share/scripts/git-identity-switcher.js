@@ -78,7 +78,7 @@ function showCurrentIdentity() {
     }
 }
 
-function change_git_identity(profileName) {
+function changeGitIdentity(profileName) {
     if (!profiles[profileName]) {
         console.error(`Profile "${profileName}" not found.`);
         console.error('Available profiles:', Object.keys(profiles).join(', '));
@@ -150,7 +150,7 @@ function main() {
             break;
         default:
             if (cmd && !cmd.startsWith('--')) {
-                change_git_identity(cmd);
+                changeGitIdentity(cmd);
             } else {
                 usage();
                 process.exit(1);
