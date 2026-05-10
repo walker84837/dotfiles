@@ -1,16 +1,25 @@
 -- lsp.lua
 return {
     'neovim/nvim-lspconfig',
-    'Hoffs/omnisharp-extended-lsp.nvim',
+    {
+        "seblyng/roslyn.nvim",
+        ---@module 'roslyn.config'
+        opts = {
+
+        },
+    },
     'rust-lang/rust.vim',
     'ziglang/zig.vim',
     'heavenshell/vim-jsdoc',
     {
         'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate',
-        config = function()
-            vim.cmd('TSEnable highlight')
-        end
+        branch = 'main',
+        build = ':TSUpdate',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+    },
+    {
+        'scalameta/nvim-metals',
+        ft = { 'scala', 'sbt' },
     },
     'fatih/vim-go',
     'wstucco/c3.nvim',

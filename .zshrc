@@ -50,6 +50,7 @@ alias poweroff="systemctl poweroff"
 alias reboot="systemctl reboot"
 alias xcd='cd "$(xplr)"'
 alias hx=helix
+alias vim="nvim -u none"
 
 # Plugins
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -106,7 +107,7 @@ fix_ipv4() {
 }
 
 change_wallpaper() {
-	swww img "$1" --transition-fps 60 --transition-type wipe --transition-duration 2
+	awww img "$1" --transition-fps 60 --transition-type wipe --transition-duration 2
 	wallust run "$1" -s
 }
 

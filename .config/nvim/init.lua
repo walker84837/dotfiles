@@ -14,6 +14,10 @@ vim.opt.smarttab = true
 vim.opt.showmatch = true
 vim.opt.showcmd = true
 
+-- Folding: enable LSP folding globally (treesitter fallback at runtime)
+-- vim.opt.foldmethod = 'expr'
+-- vim.opt.foldexpr = 'v:lua.vim.lsp.foldexpr()'
+
 -- Key bindings
 
 -- Move lines
@@ -48,6 +52,31 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.opt_local.tabstop = 4
         vim.opt_local.shiftwidth = 4
         vim.opt_local.expandtab = true
+    end,
+})
+
+vim.lsp.log.set_level("trace")
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(args)
+        local buf = args.buf
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+        if client and client:supports_method("textDocument/codeLens") then
+            -- refresh for this buffer
+            vim.lsp.codelens.enable(true)
+
+            -- set up refresh triggers
+            vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+                buffer = buf,
+                callback = function()
+                    vim.lsp.codelens.enable(true)
+                end,
+            })
+
+            -- optional: keymap to run lenses
+            vim.api.nvim_buf_set_keymap(buf, "n", "<leader>cl",
+                "<cmd>lua vim.lsp.codelens.run()<CR>", { silent = true, noremap = true })
+        end
     end,
 })
 
@@ -141,6 +170,26 @@ cmp.setup.cmdline({ '/', '?' }, {
 local on_attach = function(client, bufnr)
     vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 
+    -- LSP keybindings
+    local opts = { buffer = bufnr, noremap = true, silent = true }
+
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, vim.tbl_extend('force', opts, { desc = 'Go to definition' }))
+    vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, vim.tbl_extend('force', opts, { desc = 'Go to declaration' }))
+    vim.keymap.set(
+        'n', 'gi', vim.lsp.buf.implementation,
+        vim.tbl_extend('force', opts, { desc = 'Go to implementation' })
+    )
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, vim.tbl_extend('force', opts, { desc = 'Hover' }))
+    vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, vim.tbl_extend('force', opts, { desc = 'Rename' }))
+
+    -- LSP folding: use if client supports textDocument/foldingRange
+    if client:supports_method('textDocument/foldingRange') then
+        local win = vim.fn.bufwinid(bufnr)
+        if win > 0 then
+            vim.wo[win].foldexpr = 'v:lua.vim.lsp.foldexpr()'
+        end
+    end
+
     -- compile list of lsp servers to ignore formatting
     if client.name ~= "kotlin_language_server" then
         vim.api.nvim_create_autocmd("BufWritePre", {
@@ -154,7 +203,7 @@ end
 
 local lsp_servers = {
     "clangd", "gopls", "bashls", "jdtls", "omnisharp", "rust_analyzer",
-    "kotlin_language_server", "metals", "lua_ls", "zls", "ruff", "vtsls"
+    "kotlin_language_server", "lua_ls", "zls", "ruff", "vtsls"
 }
 
 for _, provider in ipairs(lsp_servers) do
@@ -163,6 +212,22 @@ for _, provider in ipairs(lsp_servers) do
         capabilities = capabilities,
     })
 end
+
+-- nvim-metals configuration
+local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "scala", "sbt" },
+    group = nvim_metals_group,
+    callback = function()
+        local metals_config = require("metals").bare_config()
+        metals_config.on_attach = function(client, bufnr)
+            on_attach(client, bufnr)
+            require("metals").setup_dap()
+        end
+        metals_config.capabilities = capabilities
+        require("metals").initialize_or_attach(metals_config)
+    end,
+})
 
 vim.lsp.config("jdtls", {
     settings = {
@@ -173,12 +238,6 @@ vim.lsp.config("jdtls", {
                 maven = { enabled = true },
             },
         },
-    },
-})
-
-vim.lsp.config("kotlin_language_server", {
-    settings = {
-        java = { format = { enabled = false }, },
     },
 })
 
@@ -203,16 +262,34 @@ vim.lsp.config("zls", {
 --     on_attach = on_attach,
 --     capabilities = capabilities,
 -- })
-
-vim.lsp.config("omnisharp", {
-    cmd = { "/usr/bin/omnisharp", "--languageserver" },
-    handlers = {
-        ["textDocument/definition"] = require('omnisharp_extended').definition_handler,
-        ["textDocument/typeDefinition"] = require('omnisharp_extended').type_definition_handler,
-        ["textDocument/references"] = require('omnisharp_extended').references_handler,
-        ["textDocument/implementation"] = require('omnisharp_extended').implementation_handler,
+vim.lsp.config("roslyn", {
+    args = {},
+    config = {
+        on_attach = on_attach,
+        capabilities = capabilities,
+        settings = {
+            ["csharp|background_analysis"] = {
+                dotnet_compiler_diagnostics_scope = "fullSolution",
+            },
+            ["csharp|inlay_hints"] = {
+                dotnet_enable_inlay_hints_for_implicit_object_creation = true,
+                dotnet_enable_inlay_hints_for_implicit_variable_types = true,
+                dotnet_enable_inlay_hints_for_lambda_parameter_types = true,
+                dotnet_enable_inlay_hints_for_types = true,
+                dotnet_enable_inlay_hints_for_parameters = true,
+                dotnet_enable_inlay_hints_for_literal_parameters = true,
+                dotnet_enable_inlay_hints_for_indexer_parameters = true,
+                dotnet_enable_inlay_hints_for_object_creation_parameters = true,
+                dotnet_enable_inlay_hints_for_other_parameters = true,
+                dotnet_suppress_inlay_hints_for_parameters_that_differ_only_by_suffix = true,
+                dotnet_suppress_inlay_hints_for_parameters_that_match_argument_name = true,
+                dotnet_suppress_inlay_hints_for_parameters_that_match_method_intent = true,
+            },
+        },
     },
 })
+
+
 vim.lsp.config("lua_ls", {
     on_init = function(client)
         if client.workspace_folders then
@@ -241,7 +318,21 @@ vim.lsp.config("lua_ls", {
 })
 
 vim.lsp.config("kotlin_language_server", {
-    filetypes = { "kotlin", "kt" }
+    filetypes = { "kotlin", "kt" },
+    settings = {
+        java = { format = { enabled = false }, },
+        kotlin = {
+            inlayHints = {
+                typeHints = true,
+                parameterHints = true,
+                chainedHints = true
+            }
+        }
+    },
+    cmd_env = {
+        KLS_LOG_LEVEL = 'ALL'
+    },
+    cmd = { '/home/winlogon/dev/kotlin/kotlin-lsp/kotlin-language-server/server/build/install/server/bin/kotlin-language-server' }
 })
 
 vim.lsp.config("rust_analyzer", {
@@ -301,3 +392,12 @@ require("presence").setup({
 for _, server in ipairs(lsp_servers) do
     vim.lsp.enable(server)
 end
+
+-- Add nvim-treesitter runtime to rtp for query files
+vim.opt.rtp:prepend(vim.fn.stdpath("data") .. "/lazy/nvim-treesitter/runtime")
+
+vim.api.nvim_create_autocmd("FileType", {
+    callback = function(args)
+        pcall(vim.treesitter.start, args.buf)
+    end,
+})
