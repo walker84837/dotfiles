@@ -1,0 +1,8 @@
+{
+  "name": "hyprland-scripts-utils",
+  "version": "1.0.0",
+  "description": "Shared utilities for Hyprland scripts",
+  "type": "module",
+  "main": "index.js",
+  "dependencies": {}
+}
