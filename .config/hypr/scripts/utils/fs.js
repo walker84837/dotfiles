@@ -6,7 +6,7 @@ import { basename } from 'path';
  * @returns {string[]} Array of filenames (basenames only).
  */
 export function parseNullSeparated(output) {
-  return output.split('\0').filter(Boolean).map(p => basename(p));
+    return output.split('\0').filter(Boolean).map(p => basename(p));
 }
 
 /**
@@ -15,5 +15,5 @@ export function parseNullSeparated(output) {
  * @returns {string[]} Array of full paths.
  */
 export function parseNullSeparatedFull(output) {
-  return output.split('\0').filter(Boolean);
+    return output.split('\0').filter(Boolean);
 }
