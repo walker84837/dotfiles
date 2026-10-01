@@ -2,7 +2,7 @@
 import { execSync, spawn } from 'child_process';
 import { join } from 'path';
 import { readdirSync } from 'fs';
-import { musicDir, swayncIcons, rofiBeatsConfig, rofiBeatsMenuConfig } from './utils/paths.js';
+import { musicDir, notifIcons, rofiBeatsConfig, rofiBeatsMenuConfig } from './utils/paths.js';
 
 const onlineMusic = new Map([
     ['Lofi Girl Radio ☕️🎶', 'https://play.streamafrica.net/lofiradio'],
@@ -20,12 +20,12 @@ const onlineMusic = new Map([
 ]);
 
 function notify(title, body = '') {
-    const icon = join(swayncIcons, 'music.png');
+    const icon = join(notifIcons, 'music.png');
     execSync(`notify-send -u normal -i "${icon}" "${title}" "${body}"`, { stdio: 'ignore' });
 }
 
 function stopNotification() {
-    const icon = join(swayncIcons, 'music.png');
+    const icon = join(notifIcons, 'music.png');
     execSync(`notify-send -u low -i "${icon}" "Music stopped"`, { stdio: 'ignore' });
 }
 

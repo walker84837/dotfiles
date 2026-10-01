@@ -27,7 +27,7 @@ done
 ags -q
 
 # Wallust refresh
-${SCRIPTSDIR}/WallustSwww.sh &
+${SCRIPTSDIR}/wallust-awww.js &
 
 # Relaunching rainbow borders if the script exists
 sleep 1
