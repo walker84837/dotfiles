@@ -199,20 +199,37 @@
 [palette]
 # Base colours
 background = "{{ background | blend("#1a1a1a") | blend("#1a1a1a") | blend("#1a1a1a") }}"
-foreground = "{{ foreground | lighten(0.60) }}"
+# lighten() only moves toward white, so it cannot turn this near-white palette
+# slot into a grey; blend() against a mid light-grey can. This is the body text
+# colour (ui.text, variable), and a light grey reads calmer than near-white at
+# the same 12:1 contrast.
+foreground = "{{ foreground | blend("#c8c8c8") }}"
 cursor = "{{ foreground | lighten(0.45) }}"
 selection = "{{ color4 | lighten(0.45) | saturate(0.20) }}"
 comment = "{{ color6 | lighten(0.62) | saturate(0.10) }}"
+# helix merges its built-in palette names with this one rather than replacing
+# them, so any name not defined here resolves to a fixed terminal colour that
+# has nothing to do with the wallpaper. "gray" was undefined, which is why the
+# line numbers, gutter and virtual text looked washed out. Derive it from the
+# palette instead: mid-lightness, low chroma, so it stays legible but recedes.
+gray = "{{ color6 | lighten(0.44) | saturate(0.08) }}"
 delimiter = "{{ color8 | lighten(0.30) | saturate(0.15) }}"
 
 # Accent colours. One shared lightness, so hue and chroma do all the separating.
-# Source slots are spread across the ramp: see the note above on why these six.
-accent1 = "{{ color5 | lighten(0.82) | saturate(0.42) }}"
-accent2 = "{{ color3 | lighten(0.82) | saturate(0.42) }}"
-accent3 = "{{ color6 | lighten(0.82) | saturate(0.42) }}"
-accent4 = "{{ color4 | lighten(0.82) | saturate(0.42) }}"
-accent5 = "{{ color11 | lighten(0.82) | saturate(0.42) }}"
-accent6 = "{{ color13 | lighten(0.82) | saturate(0.42) }}"
+# Source slots are spread across the ramp, and which six matters as much as the
+# factors. A wallpaper's chromatic slots cluster into hue families - the one in
+# the screenshot has blue (color1/3/9/11), gold (color4/12), red
+# (color2/5/10/13) and low-chroma greys (color0/6/7/8/14/15) - and an earlier
+# set drawn only from the reds produced six shades of one pink. These six were
+# chosen by scoring all 8008 combinations of the 16 slots on how many hue
+# families they span across every wallpaper, subject to clearing 4.5:1; this set
+# is the joint best and reaches four families on that wallpaper.
+accent1 = "{{ color8 | lighten(0.82) | saturate(0.42) }}"
+accent2 = "{{ color9 | lighten(0.82) | saturate(0.42) }}"
+accent3 = "{{ color11 | lighten(0.82) | saturate(0.42) }}"
+accent4 = "{{ color12 | lighten(0.82) | saturate(0.42) }}"
+accent5 = "{{ color13 | lighten(0.82) | saturate(0.42) }}"
+accent6 = "{{ color14 | lighten(0.82) | saturate(0.42) }}"
 
 # Terminal colours, for diagnostics and anything matching helix's 16-colour set.
 black = "{{ color0 | lighten(0.30) }}"
@@ -222,7 +239,9 @@ yellow = "{{ color3 | lighten(0.60) | saturate(0.20) }}"
 blue = "{{ color4 | lighten(0.48) | saturate(0.20) }}"
 magenta = "{{ color5 | lighten(0.70) | saturate(0.20) }}"
 cyan = "{{ color6 | lighten(0.65) | saturate(0.20) }}"
-white = "{{ color8 | lighten(0.72) }}"
+# Unused by the scopes above, but kept in step with foreground: a light grey
+# taken from the palette rather than pushed to white.
+white = "{{ color8 | blend("#e0e0e0") }}"
 light-gray = "{{ color6 | lighten(0.68) }}"
 light-red = "{{ color5 | lighten(0.68) | saturate(0.20) }}"
 light-green = "{{ color6 | lighten(0.58) | saturate(0.20) }}"
