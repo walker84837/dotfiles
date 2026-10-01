@@ -1,0 +1,200 @@
+# Interface elements
+"ui.background" = { bg = "background" }
+"ui.background.separator" = "light-gray"
+"ui.text" = "foreground"
+"ui.text.inactive" = "gray"
+"ui.text.info" = "accent3"
+"ui.text.directory" = "accent2"
+"ui.cursor" = { fg = "background", bg = "cursor" }
+"ui.cursor.normal" = { fg = "background", bg = "cursor" }
+"ui.cursor.insert" = { fg = "background", bg = "accent2" }
+"ui.cursor.select" = { fg = "background", bg = "accent3" }
+"ui.cursor.match" = { fg = "accent4", bg = "background" }
+"ui.cursor.primary" = { fg = "background", bg = "cursor" }
+"ui.cursor.primary.normal" = { fg = "background", bg = "cursor" }
+"ui.cursor.primary.insert" = { fg = "background", bg = "accent2" }
+"ui.cursor.primary.select" = { fg = "background", bg = "accent3" }
+"ui.debug.breakpoint" = "red"
+"ui.debug.active" = "yellow"
+"ui.gutter" = "gray"
+"ui.gutter.selected" = "foreground"
+"ui.linenr" = "gray"
+"ui.linenr.selected" = "foreground"
+"ui.statusline" = { fg = "foreground", bg = "black" }
+"ui.statusline.inactive" = { fg = "gray", bg = "black" }
+"ui.statusline.normal" = { fg = "accent2", bg = "black" }
+"ui.statusline.insert" = { fg = "accent3", bg = "black" }
+"ui.statusline.select" = { fg = "accent4", bg = "black" }
+"ui.statusline.separator" = "light-gray"
+"ui.bufferline" = { fg = "gray", bg = "background" }
+"ui.bufferline.active" = { fg = "foreground", modifiers = ["bold"] }
+"ui.bufferline.background" = { fg = "gray", bg = "background" }
+"ui.selection" = { bg = "selection" }
+"ui.selection.primary" = { bg = "accent6" }
+"ui.window" = "light-gray"
+"ui.popup" = { bg = "black" }
+"ui.popup.info" = { fg = "foreground", bg = "accent6" }
+"ui.picker.header" = { fg = "accent2", bg = "background" }
+"ui.picker.header.column" = { fg = "gray", bg = "background" }
+"ui.picker.header.column.active" = { fg = "accent2", modifiers = ["bold"] }
+"ui.menu" = { fg = "foreground", bg = "background" }
+"ui.menu.selected" = { fg = "black", bg = "cyan" }
+"ui.menu.scroll" = { fg = "light-gray", bg = "gray" }
+"ui.help" = { fg = "foreground", bg = "black" }
+"ui.highlight" = { bg = "selection" }
+"ui.highlight.frameline" = { fg = "accent1", bg = "background" }
+"ui.text.focus" = "cyan"
+"ui.virtual.ruler" = "light-gray"
+"ui.virtual.indent-guide" = "gray"
+"ui.virtual.whitespace" = "gray"
+"ui.virtual.inlay-hint" = "gray"
+"ui.virtual.inlay-hint.parameter" = "accent3"
+"ui.virtual.inlay-hint.type" = "accent4"
+"ui.virtual.wrap" = "light-gray"
+"ui.virtual.jump-label" = "accent2"
+
+# Syntax highlighting (Tree-sitter scopes)
+"attribute" = "accent3"
+"constant" = "accent5"
+"constant.builtin" = { fg = "accent5", modifiers = ["bold"] }
+"constant.builtin.boolean" = "accent5"
+"constant.character" = "accent4"
+"constant.character.escape" = "accent4"
+"constant.character.regexp" = "accent4"
+"constant.numeric" = "accent5"
+"constant.numeric.integer" = "accent5"
+"constant.numeric.float" = "accent5"
+"constructor" = "accent2"
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.line" = { fg = "comment", modifiers = ["italic"] }
+"comment.block" = { fg = "comment", modifiers = ["italic"] }
+"comment.documentation" = { fg = "comment", modifiers = ["italic"] }
+"string" = "accent4"
+"string.quoted" = "accent4"
+"string.regexp" = "accent4"
+"string.special" = { fg = "accent4", modifiers = ["italic"] }
+"string.path" = "accent4"
+"string.url" = "accent4"
+"string.symbol" = "accent4"
+"variable" = "foreground"
+"variable.builtin" = "accent6"
+"variable.parameter" = "accent6"
+"variable.other" = "foreground"
+"variable.other.member" = "accent6"
+"variable.other.member.private" = "accent1"
+"label" = "accent3"
+"punctuation" = "delimiter"
+"punctuation.delimiter" = "delimiter"
+"punctuation.bracket" = "delimiter"
+"punctuation.special" = "delimiter"
+"operator" = "delimiter"
+"keyword" = "accent1"
+"keyword.control" = { fg = "accent1", modifiers = ["bold"] }
+"keyword.control.conditional" = "accent1"
+"keyword.control.repeat" = "accent1"
+"keyword.control.import" = "accent1"
+"keyword.control.return" = "accent1"
+"keyword.control.exception" = "accent1"
+"keyword.operator" = "accent1"
+"keyword.directive" = "accent1"
+"keyword.function" = "accent1"
+"keyword.storage" = "accent1"
+"keyword.storage.type" = "accent3"
+"keyword.storage.modifier" = "accent1"
+"function" = "accent2"
+"function.builtin" = { fg = "accent2", modifiers = ["bold"] }
+"function.method" = "accent2"
+"function.method.private" = "accent2"
+"function.macro" = "accent2"
+"function.special" = "accent2"
+"type" = "accent3"
+"type.builtin" = "accent3"
+"tag" = "accent3"
+"tag.builtin" = "accent3"
+"namespace" = "accent3"
+"special" = "accent5"
+
+# Markdown and markup
+"markup.normal" = "foreground"
+"markup.heading" = "accent2"
+"markup.heading.marker" = "accent1"
+"markup.heading.1" = "accent1"
+"markup.heading.2" = "accent1"
+"markup.heading.3" = "accent1"
+"markup.heading.4" = "accent1"
+"markup.heading.5" = "accent1"
+"markup.heading.6" = "accent1"
+"markup.list.unnumbered" = "foreground"
+"markup.list.numbered" = "foreground"
+"markup.list.checked" = "accent2"
+"markup.list.unchecked" = "accent4"
+"markup.bold" = { fg = "foreground", modifiers = ["bold"] }
+"markup.italic" = { fg = "foreground", modifiers = ["italic"] }
+"markup.strikethrough" = "gray"
+"markup.link" = "accent4"
+"markup.link.url" = "accent4"
+"markup.link.label" = "accent2"
+"markup.link.text" = "foreground"
+"markup.quote" = "accent6"
+"markup.raw.inline" = "accent5"
+"markup.raw.block" = "accent5"
+
+# Diff and version control
+"diff.plus" = "green"
+"diff.plus.gutter" = "green"
+"diff.minus" = "red"
+"diff.minus.gutter" = "red"
+"diff.delta.moved" = "yellow"
+"diff.delta.conflict" = "red"
+"diff.delta.gutter" = "yellow"
+
+# Miscellaneous
+"tabstop" = "comment"
+
+# Diagnostics
+"warning" = "accent4"
+"error" = "accent1"
+"info" = "accent3"
+"hint" = "accent6"
+"diagnostic" = { underline = { style = "curl", color = "accent1" } }
+"diagnostic.hint" = "accent6"
+"diagnostic.info" = "accent3"
+"diagnostic.warning" = "accent4"
+"diagnostic.error" = "accent1"
+"diagnostic.unnecessary" = { fg = "gray", modifiers = ["dim"] }
+"diagnostic.deprecated" = { fg = "gray", modifiers = ["strike"] }
+
+# Custom palette
+[palette]
+# Base colors
+background = "{{ background | strip }}"
+foreground = "{{ foreground | strip }}"
+cursor = "{{ cursor | strip }}"
+selection = "{{ color4 | strip }}"
+comment = "{{ color7 | strip }}"
+delimiter = "{{ color14 | strip }}"
+
+# Accent colors
+accent1 = "{{ color1 | strip }}"
+accent2 = "{{ color2 | strip }}"
+accent3 = "{{ color4 | strip }}"
+accent4 = "{{ color3 | strip }}"
+accent5 = "{{ color5 | strip }}"
+accent6 = "{{ color6 | strip }}"
+
+# Terminal colors
+black = "{{ color0 | strip }}"
+red = "{{ color1 | strip }}"
+green = "{{ color2 | strip }}"
+yellow = "{{ color3 | strip }}"
+blue = "{{ color4 | strip }}"
+magenta = "{{ color5 | strip }}"
+cyan = "{{ color6 | strip }}"
+white = "{{ color15 | strip }}"
+light-gray = "{{ color8 | strip }}"
+light-red = "{{ color9 | strip }}"
+light-green = "{{ color10 | strip }}"
+light-yellow = "{{ color11 | strip }}"
+light-blue = "{{ color12 | strip }}"
+light-magenta = "{{ color13 | strip }}"
+light-cyan = "{{ color14 | strip }}"

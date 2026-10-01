@@ -1,0 +1,5 @@
+git:
+  overrideGpg: true
+keybinding:
+  universal:
+    confirmInEditor: [<alt+enter>, <ctrl+s>]
