@@ -164,37 +164,69 @@
 "diagnostic.unnecessary" = { fg = "gray", modifiers = ["dim"] }
 "diagnostic.deprecated" = { fg = "gray", modifiers = ["strike"] }
 
-# Custom palette
+# Palette
+#
+# The background is pinned to a dark grey and every foreground to the light end,
+# the same way the kitty template does, because against a dark background
+# luminance is the only thing carrying contrast. wallust's dark16 palette puts
+# color0-7 at roughly the same lightness as the background, so mapping syntax
+# straight onto them renders it at ~1.1:1. Every entry below is therefore run
+# through lighten() to clear 4.5:1.
+#
+# The six accents share one lightness and are separated by HUE and CHROMA
+# instead. Varying their lightness was tried first and is the wrong lever here:
+# spreading six colours down a lightness ramp forces the dimmest one below 4.5:1
+# against this background (accent6 measured 3.00:1), and on a wallpaper palette
+# with only two or three hues the lightness spread just reads as six muddy
+# shades of the same colour. Holding one lightness keeps every accent legible
+# with room to spare and leaves hue as the only thing telling them apart, so
+# saturate() can be pushed well past what was previously safe.
+#
+# lighten(0.82) + saturate(0.42) and these six source slots were chosen by
+# sweeping both across every wallpaper in ~/Pictures/Wallpapers. Slots matter as
+# much as the factors here: the first attempt used color2 and color8, which are
+# both neutral greys on some palettes and collided into the same colour, and
+# color2 rendered at 4.33:1. Taking the accents from color5, color3, color6,
+# color4 and the light half (color11, color13) fixes both: worst case is now
+# 5.48:1 and the closest pair of accents is further apart than with any other
+# slot set tried. Going past saturate(0.42) starts failing; 0.45 drops a
+# wallpaper below 4.5:1.
+#
+# Do NOT add wallust's `strip` filter here: it removes the leading '#', and
+# helix 25.07 ThemePalette::string_to_rgb accepts only '#rrggbb' or a numeric
+# ANSI index. One bad entry makes try_from fail and the whole palette falls back
+# to defaults silently, leaving every named colour unresolved.
 [palette]
-# Base colors
-background = "{{ background | strip }}"
-foreground = "{{ foreground | strip }}"
-cursor = "{{ cursor | strip }}"
-selection = "{{ color4 | strip }}"
-comment = "{{ color7 | strip }}"
-delimiter = "{{ color14 | strip }}"
+# Base colours
+background = "{{ background | blend("#1a1a1a") | blend("#1a1a1a") | blend("#1a1a1a") }}"
+foreground = "{{ foreground | lighten(0.60) }}"
+cursor = "{{ foreground | lighten(0.45) }}"
+selection = "{{ color4 | lighten(0.45) | saturate(0.20) }}"
+comment = "{{ color6 | lighten(0.62) | saturate(0.10) }}"
+delimiter = "{{ color8 | lighten(0.30) | saturate(0.15) }}"
 
-# Accent colors
-accent1 = "{{ color1 | strip }}"
-accent2 = "{{ color2 | strip }}"
-accent3 = "{{ color4 | strip }}"
-accent4 = "{{ color3 | strip }}"
-accent5 = "{{ color5 | strip }}"
-accent6 = "{{ color6 | strip }}"
+# Accent colours. One shared lightness, so hue and chroma do all the separating.
+# Source slots are spread across the ramp: see the note above on why these six.
+accent1 = "{{ color5 | lighten(0.82) | saturate(0.42) }}"
+accent2 = "{{ color3 | lighten(0.82) | saturate(0.42) }}"
+accent3 = "{{ color6 | lighten(0.82) | saturate(0.42) }}"
+accent4 = "{{ color4 | lighten(0.82) | saturate(0.42) }}"
+accent5 = "{{ color11 | lighten(0.82) | saturate(0.42) }}"
+accent6 = "{{ color13 | lighten(0.82) | saturate(0.42) }}"
 
-# Terminal colors
-black = "{{ color0 | strip }}"
-red = "{{ color1 | strip }}"
-green = "{{ color2 | strip }}"
-yellow = "{{ color3 | strip }}"
-blue = "{{ color4 | strip }}"
-magenta = "{{ color5 | strip }}"
-cyan = "{{ color6 | strip }}"
-white = "{{ color15 | strip }}"
-light-gray = "{{ color8 | strip }}"
-light-red = "{{ color9 | strip }}"
-light-green = "{{ color10 | strip }}"
-light-yellow = "{{ color11 | strip }}"
-light-blue = "{{ color12 | strip }}"
-light-magenta = "{{ color13 | strip }}"
-light-cyan = "{{ color14 | strip }}"
+# Terminal colours, for diagnostics and anything matching helix's 16-colour set.
+black = "{{ color0 | lighten(0.30) }}"
+red = "{{ color5 | lighten(0.55) | saturate(0.20) }}"
+green = "{{ color6 | lighten(0.50) | saturate(0.20) }}"
+yellow = "{{ color3 | lighten(0.60) | saturate(0.20) }}"
+blue = "{{ color4 | lighten(0.48) | saturate(0.20) }}"
+magenta = "{{ color5 | lighten(0.70) | saturate(0.20) }}"
+cyan = "{{ color6 | lighten(0.65) | saturate(0.20) }}"
+white = "{{ color8 | lighten(0.72) }}"
+light-gray = "{{ color6 | lighten(0.68) }}"
+light-red = "{{ color5 | lighten(0.68) | saturate(0.20) }}"
+light-green = "{{ color6 | lighten(0.58) | saturate(0.20) }}"
+light-yellow = "{{ color3 | lighten(0.72) | saturate(0.20) }}"
+light-blue = "{{ color4 | lighten(0.62) | saturate(0.20) }}"
+light-magenta = "{{ color5 | lighten(0.78) | saturate(0.20) }}"
+light-cyan = "{{ color6 | lighten(0.74) | saturate(0.20) }}"
