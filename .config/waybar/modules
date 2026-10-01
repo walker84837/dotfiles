@@ -632,7 +632,7 @@
 },
 "custom/light_dark": {
 	"format": "󰔎",
-	"on-click": "~/.config/hypr/scripts/DarkLight.sh",
+	"on-click": "~/.config/hypr/scripts/darklight.js",
 	"on-click-right": "~/.config/hypr/scripts/WaybarStyles.sh",
 	"on-click-middle": "~/.config/hypr/UserScripts/WallpaperSelect.sh",
 	"tooltip": true,

@@ -5,7 +5,7 @@
  *
  * Dunst is NOT handled here: its colours come from the wallust template
  * ~/.config/wallust/templates/colors-dunst, which rewrites the whole
- * ~/.config/dunst/dunstrc. That runs inside the wallust-swww step below, so
+ * ~/.config/dunst/dunstrc. That runs inside the wallust-awww step below, so
  * editing dunst colours here would only be overwritten a moment later.
  */
 import { readFileSync, writeFileSync, existsSync } from 'fs';
