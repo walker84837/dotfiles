@@ -1,6 +1,6 @@
 #!/bin/bash
 
-music_icon="$HOME/.config/swaync/icons/music.png"
+music_icon="$HOME/.config/hypr/notif-icons/icons/music.png"
 
 # Play the next track
 play_next() {

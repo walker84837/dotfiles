@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iDIR="$HOME/.config/swaync/icons"
+iDIR="$HOME/.config/hypr/notif-icons/icons"
 sDIR="$HOME/.config/hypr/scripts"
 notify_cmd_shot="notify-send -h string:x-canonical-private-synchronous:shot-notify -u low -i ${iDIR}/picture.png"
 

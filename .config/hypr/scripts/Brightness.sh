@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iDIR="$HOME/.config/swaync/icons"
+iDIR="$HOME/.config/hypr/notif-icons/icons"
 notification_timeout=1000
 step=10  # INCREASE/DECREASE BY THIS VALUE
 

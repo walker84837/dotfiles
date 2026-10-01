@@ -1,0 +1,33 @@
+* {
+active-background: {{color9 | darken(0.62)}};
+active-foreground: {{color9 | lighten(0.82)}};
+normal-background: {{background}};
+normal-foreground: {{foreground}};
+urgent-background: {{color12 | darken(0.62)}};
+urgent-foreground: {{color12 | lighten(0.82)}};
+
+alternate-active-background: {{color5 | darken(0.62)}};
+alternate-active-foreground: {{color5 | lighten(0.82)}};
+alternate-normal-background: {{background}};
+alternate-normal-foreground: {{foreground}};
+alternate-urgent-background: {{background}};
+alternate-urgent-foreground: {{foreground}};
+
+selected-active-background: {{color9 | darken(0.62)}};
+selected-active-foreground: {{color9 | lighten(0.82)}};
+selected-normal-background: {{color7 | darken(0.66)}};
+selected-normal-foreground: {{color7 | lighten(0.84)}};
+selected-urgent-background: {{color12 | darken(0.62)}};
+selected-urgent-foreground: {{color12 | lighten(0.84)}};
+
+background-color: {{background}};
+background: rgba(0,0,0,0.7);
+foreground: {{foreground}};
+border-color: {{color9 | darken(0.45)}};
+}
+
+# Line 24 above is rewritten in place by darklight.js (setRofiBackground), which
+# flips the popup background between a dark and a light translucent wash. Keep it
+# on line 24. The pairs above are derived from one palette colour each with
+# darken() and lighten(), so foreground and background cannot collide the way
+# {{color7}} foreground on {{color7}} background did under the light16 palette.

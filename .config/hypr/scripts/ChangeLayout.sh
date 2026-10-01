@@ -1,6 +1,6 @@
 #!/bin/bash
 
-notif="$HOME/.config/swaync/images/bell.png"
+notif="$HOME/.config/hypr/notif-icons/images/bell.png"
 
 LAYOUT=$(hyprctl -j getoption general:layout | jq '.str' | sed 's/"//g')
 

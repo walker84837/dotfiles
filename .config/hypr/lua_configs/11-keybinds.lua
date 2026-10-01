@@ -26,7 +26,7 @@ hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(scriptsDir .. "/RofiSearch.sh"))
 hl.bind(mainMod .. " + SHIFT + B", hl.dsp.exec_cmd(scriptsDir .. "/ChangeBlur.sh"))
 hl.bind(mainMod .. " + ALT + L", hl.dsp.exec_cmd(scriptsDir .. "/ChangeLayout.sh"))
 hl.bind(mainMod .. " + ALT + V", hl.dsp.exec_cmd(scriptsDir .. "/ClipManager.sh"))
-hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("swaync-client -t -sw"))
+-- hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd("dunstctl set-paused toggle"))
 
 -- Screen drawing
 hl.bind(mainMod .. " + SHIFT + D", hl.dsp.exec_cmd("gromit-mpx"))
@@ -45,11 +45,11 @@ hl.bind(mainMod .. " + CTRL + Return", hl.dsp.layout("swapwithmaster"))
 hl.bind(mainMod .. " + G", hl.dsp.group.toggle())
 hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.group.next())
 
-  -- Cycle windows and bring to top (original had two binds on ALT+Tab)
-  hl.bind("ALT + Tab", function()
+-- Cycle windows and bring to top (original had two binds on ALT+Tab)
+hl.bind("ALT + Tab", function()
     hl.dispatch(hl.dsp.window.cycle_next())
     hl.dispatch(hl.dsp.window.bring_to_top())
-  end)
+end)
 
 -- Special Keys / Hot Keys (with repeat/lock for hold behavior)
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd(scriptsDir .. "/Volume.sh --inc"), { repeating = true, locked = true })

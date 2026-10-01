@@ -4,7 +4,7 @@
 mDIR="$HOME/Music/"
 
 # Directory for icons
-iDIR="$HOME/.config/swaync/icons"
+iDIR="$HOME/.config/hypr/notif-icons/icons"
 
 # Online Stations. Edit as required
 declare -A online_music=(

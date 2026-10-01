@@ -1,6 +1,6 @@
 #!/bin/bash
 
-notif="$HOME/.config/swaync/images/bell.png"
+notif="$HOME/.config/hypr/notif-icons/images/bell.png"
 
 # Check if any wireless device is blocked
 wifi_blocked=$(rfkill list wifi | grep -o "Soft blocked: yes")

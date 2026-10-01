@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iDIR="$HOME/.config/swaync/icons"
+iDIR="$HOME/.config/hypr/notif-icons/icons"
 
 # Get keyboard brightness
 get_kbd_backlight() {

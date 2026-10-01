@@ -2,7 +2,7 @@
 
 layout_f="$HOME/.cache/kb_layout"
 settings_file="$HOME/.config/hypr/UserConfigs/UserSettings.conf"
-notif="$HOME/.config/swaync/images/bell.png"
+notif="$HOME/.config/hypr/notif-icons/images/bell.png"
 
 # Check if ~/.cache/kb_layout exists and create it with a default layout from Settings.conf if not found
 if [ ! -f "$layout_f" ]; then

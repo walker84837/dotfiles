@@ -1,6 +1,6 @@
 #!/bin/bash
 
-iDIR="$HOME/.config/swaync/icons"
+iDIR="$HOME/.config/hypr/notif-icons/icons"
 sDIR="$HOME/.config/hypr/scripts"
 
 # Get Volume

@@ -4,15 +4,13 @@
 hyprctl
 hyprlock
 hyprshot
-swww
+awww
 wallust
 playerctl
 pamixer
 brightnessctl
 rofi
 waybar
-swaync
-swaync-client
 ags
 nm-applet
 pypr
