@@ -175,7 +175,14 @@ function setQtColors(mode) {
 }
 
 /**
- * Update rofi background color (line 24 in wallust template).
+ * Flip the rofi popup background between a dark and a light translucent wash.
+ *
+ * This writes line 24 of ~/.config/wallust/templates/colors-rofi.rasi by index
+ * (23), so that line must stay where it is. The template is a wallust target:
+ * wallust rewrites the whole file on every wallpaper change, which is why the
+ * coupling is documented here rather than in the template - a '#' comment there
+ * would be parsed as a rasi global block and break the theme.
+ *
  * @param {string} mode - 'Dark' or 'Light'.
  */
 function setRofiBackground(mode) {

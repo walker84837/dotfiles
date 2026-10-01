@@ -13,7 +13,7 @@ return {
         end
     },
     {
-        'walker84837/playtime.nvim',
+        dir = '/home/winlogon/dev/lua/playtime.nvim',
         config = function()
             require('playtime').setup()
         end

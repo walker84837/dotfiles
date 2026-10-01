@@ -9,19 +9,28 @@ return {
             'L3MON4D3/LuaSnip',
             'saadparwaiz1/cmp_luasnip',
             {
-                'petertriho/cmp-git', config = function()
+                'petertriho/cmp-git',
+                config = function()
                     require('cmp_git').setup()
                 end
             },
         },
     },
     {
-    "rachartier/tiny-inline-diagnostic.nvim",
+        "rachartier/tiny-inline-diagnostic.nvim",
         event = "VeryLazy", -- Or `LspAttach`
-        priority = 1000, -- needs to be loaded in first
+        priority = 1000,    -- needs to be loaded in first
         config = function()
             require('tiny-inline-diagnostic').setup()
             vim.diagnostic.config({ virtual_text = false }) -- Only if needed in your configuration, if you already have native LSP diagnostics
         end
+    },
+    {
+        'windwp/nvim-autopairs',
+        event = "InsertEnter",
+        config = true,
+        opts = {
+            disable_filetype = { "TelescopePrompt", "vim" }
+        }
     }
 }

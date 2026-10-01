@@ -1,4 +1,7 @@
 -- Main Hyprland Lua Configuration
+-- This is a port of the original hyprlang .conf files to Lua syntax
+-- Compatible with Hyprland 0.55+
+-- Original .conf files are preserved in configs/ directory as a reference
 
 -- Load theme colors from wallust
 local theme = dofile(os.getenv("HOME") .. "/.config/hypr/lua_configs/theme.lua")
@@ -44,4 +47,3 @@ require("lua_configs.12-user_keybinds")
 require("lua_configs.13-autostart")
 
 print("Hyprland Lua configuration loaded successfully")
-

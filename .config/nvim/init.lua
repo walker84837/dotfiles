@@ -3,6 +3,34 @@ require("config.lazy")
 -- init.lua
 require('lazy').setup("plugins")
 
+local function make_from_cwd()
+    local markers = {
+        { "Makefile",         "make -B" },
+        { "Cargo.toml",       "cargo build -q" },
+        { "CMakeLists.txt",   "cmake --build build" },
+        { "gradlew",          "./gradlew build" },
+        { "gradlew.bat",      "gradlew.bat build" },
+        { "build.gradle",     "gradle build" },
+        { "build.gradle.kts", "gradle build" },
+    }
+
+    local pwd = vim.fn.getcwd()
+
+    for _, marker in ipairs(markers) do
+        if vim.uv.fs_stat(pwd .. "/" .. marker[1]) then
+            return marker[2]
+        end
+    end
+
+    for name, type in vim.fs.dir(pwd) do
+        if type == "file" and name:match("%.odin$") then
+            return "odin build . -vet"
+        end
+    end
+
+    return nil
+end
+
 -- Basic settings
 vim.opt.number = true
 vim.opt.termguicolors = true
@@ -13,6 +41,7 @@ vim.opt.autoindent = true
 vim.opt.smarttab = true
 vim.opt.showmatch = true
 vim.opt.showcmd = true
+vim.opt.makeprg = make_from_cwd()
 
 -- Folding: enable LSP folding globally (treesitter fallback at runtime)
 -- vim.opt.foldmethod = 'expr'
@@ -32,6 +61,13 @@ vim.api.nvim_set_keymap("n", "<Leader>y", '"+y', { noremap = true, silent = true
 vim.api.nvim_set_keymap("v", "<Leader>y", '"+y', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Leader>Y", '"+Y', { noremap = true, silent = true })
 
+-- Kit language (tree-sitter-kit, local grammar)
+vim.filetype.add({ extension = { kit = 'kit' } })
+local kit_parser = vim.fn.expand('~/dev/rust/kit/tree-sitter-kit/kit.so')
+if vim.fn.filereadable(kit_parser) == 1 then
+    vim.treesitter.language.add('kit', { path = kit_parser })
+end
+
 -- Plugin options
 vim.g.markdown_fenced_languages = { 'rust', 'toml', 'cpp', 'c', 'html', 'python', 'bash=sh' }
 vim.g.rustfmt_autosave = 1
@@ -47,11 +83,18 @@ vim.api.nvim_create_augroup("lua_indent", { clear = true })
 
 -- Set indentation for languages (4 spaces)
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "c", "cpp", "cs", "kotlin", "java", "lua", "javascript" },
+    pattern = { "c", "cpp", "cs", "kotlin", "java", "lua", "javascript", "kit" },
     callback = function()
         vim.opt_local.tabstop = 4
         vim.opt_local.shiftwidth = 4
         vim.opt_local.expandtab = true
+    end,
+})
+
+-- Update the command to run when we build the project every time we change CWDs.
+vim.api.nvim_create_autocmd("DirChanged", {
+    callback = function()
+        vim.opt.makeprg = make_from_cwd()
     end,
 })
 
@@ -79,6 +122,19 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end
     end,
 })
+
+vim.api.nvim_create_user_command('FtSetAll', function()
+    local client = vim.lsp.get_clients({ name = "rust_analyzer" })[1]
+    if not client then return end
+
+    local s = client.config.settings
+
+    s['rust-analyzer'].cargo.features = "all"
+
+    vim.lsp.enable('rust_analyzer', false)
+    vim.lsp.config('rust_analyzer', { settings = s })
+    vim.lsp.enable('rust_analyzer')
+end, { desc = 'Enable all rust-analyzer features' })
 
 -- Set indentation for hyprlang
 vim.filetype.add({
@@ -168,7 +224,7 @@ cmp.setup.cmdline({ '/', '?' }, {
 })
 
 local on_attach = function(client, bufnr)
-    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+    -- vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 
     -- LSP keybindings
     local opts = { buffer = bufnr, noremap = true, silent = true }
@@ -190,8 +246,9 @@ local on_attach = function(client, bufnr)
         end
     end
 
+    -- TODO: consider moving this to a sibling list of `lsp_servers`
     -- compile list of lsp servers to ignore formatting
-    if client.name ~= "kotlin_language_server" then
+    if client.name ~= "kotlin_language_server" and client.name ~= "neocmake" then
         vim.api.nvim_create_autocmd("BufWritePre", {
             buffer = bufnr,
             callback = function()
@@ -203,8 +260,20 @@ end
 
 local lsp_servers = {
     "clangd", "gopls", "bashls", "jdtls", "omnisharp", "rust_analyzer",
-    "kotlin_language_server", "lua_ls", "zls", "ruff", "vtsls"
+    "kotlin_language_server", "lua_ls", "zls", "ruff", "vtsls", "ols",
+    "neocmake", "pyrefly"
 }
+
+-- vim.lsp.config("neocmake", {
+--     cmd = { 'neocmakelsp' },
+--     filetypes = { 'cmake' },
+--     on_attach = on_attach,
+--     capabilities = capabilities,
+--     root_dir = function(fname)
+--         return vim.fs.root(fname, { 'CMakeLists.txt', '.neocmake.toml' }) or vim.fs.dirname(fname)
+--     end,
+-- })
+-- vim.lsp.enable("neocmake")
 
 for _, provider in ipairs(lsp_servers) do
     vim.lsp.config(provider, {
@@ -254,6 +323,11 @@ vim.lsp.config("zls", {
             semantic_tokens = "full",
         },
     },
+})
+
+vim.lsp.config("ols", {
+    cmd = { 'ols' },
+    filetypes = { 'odin' },
 })
 
 -- vim.lsp.config("clangd", {
@@ -333,6 +407,8 @@ vim.lsp.config("kotlin_language_server", {
         KLS_LOG_LEVEL = 'ALL'
     },
     cmd = { '/home/winlogon/dev/kotlin/kotlin-lsp/kotlin-language-server/server/build/install/server/bin/kotlin-language-server' }
+    -- cmd = { '/home/winlogon/dev/kotlin/kotlin-lsp/pr665-worktree/server/build/install/server/bin/kotlin-language-server' }
+    -- cmd = { 'kotlin-language-server' }
 })
 
 vim.lsp.config("rust_analyzer", {

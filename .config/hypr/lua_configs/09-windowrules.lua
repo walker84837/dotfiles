@@ -78,7 +78,7 @@ hl.window_rule({ name = "opacity-pcmanfm", match = { class = "pcmanfm-qt" }, opa
 hl.window_rule({ name = "opacity-gedit", match = { class = "^(gedit|org.gnome.TextEditor)$" }, opacity = "0.8 0.7" })
 hl.window_rule({ name = "opacity-deluge", match = { class = "deluge" }, opacity = "0.9 0.8" })
 hl.window_rule({ name = "opacity-alacritty", match = { class = "Alacritty" }, opacity = "0.9 0.8" })
-hl.window_rule({ name = "opacity-kitty", match = { class = "kitty" }, opacity = "0.8 0.7" })
+hl.window_rule({ name = "opacity-kitty", match = { class = "kitty" }, opacity = "0.88 0.7" })
 hl.window_rule({ name = "opacity-mousepad", match = { class = "mousepad" }, opacity = "0.9 0.7" })
 hl.window_rule({ name = "opacity-codium", match = { class = "^(VSCodium|codium-url-handler)$" }, opacity = "0.9 0.7" })
 hl.window_rule({ name = "opacity-nwg-qt-opaque", match = { class = "^(nwg-look|qt5ct|qt6ct|yad)$" }, opacity = "0.9 0.8" })
@@ -150,12 +150,12 @@ hl.window_rule({ name = "pip-size", match = { title = "^(Picture-in-Picture)$" }
 hl.window_rule({ name = "pip-move", match = { title = "^(Picture-in-Picture)$" }, move = "72% 7%" })
 
 -- XWayland video bridge rules
-hl.window_rule({ name = "xwayland-opacity", match = { class = "xwaylandvideobridge" }, opacity = "0.0 override" })
-hl.window_rule({ name = "xwayland-no-anim", match = { class = "xwaylandvideobridge" }, no_anim = true })
-hl.window_rule({ name = "xwayland-no-init-focus", match = { class = "xwaylandvideobridge" }, no_initial_focus = true })
-hl.window_rule({ name = "xwayland-max-size", match = { class = "xwaylandvideobridge" }, max_size = "1 1" })
-hl.window_rule({ name = "xwayland-no-blur", match = { class = "xwaylandvideobridge" }, no_blur = true })
-hl.window_rule({ name = "xwayland-no-focus", match = { class = "xwaylandvideobridge" }, no_focus = true })
+-- hl.window_rule({ name = "xwayland-opacity", match = { class = "xwaylandvideobridge" }, opacity = "0.0 override" })
+-- hl.window_rule({ name = "xwayland-no-anim", match = { class = "xwaylandvideobridge" }, no_anim = true })
+-- hl.window_rule({ name = "xwayland-no-init-focus", match = { class = "xwaylandvideobridge" }, no_initial_focus = true })
+-- hl.window_rule({ name = "xwayland-max-size", match = { class = "xwaylandvideobridge" }, max_size = "1 1" })
+-- hl.window_rule({ name = "xwayland-no-blur", match = { class = "xwaylandvideobridge" }, no_blur = true })
+-- hl.window_rule({ name = "xwayland-no-focus", match = { class = "xwaylandvideobridge" }, no_focus = true })
 
 -- Gromit-mpx special workspace
 hl.workspace_rule({ workspace = "special:gromit", gaps_in = 0, gaps_out = 0, on_created_empty = "gromit-mpx -a" })

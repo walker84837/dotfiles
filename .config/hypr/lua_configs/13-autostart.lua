@@ -1,24 +1,31 @@
 -- Autostart Applications
 
-local scriptsDir = os.getenv("HOME") .. "/.config/hypr/scripts"
-local userScripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
+local scripts_dir = os.getenv("HOME") .. "/.config/hypr/scripts"
+-- local user_scripts = os.getenv("HOME") .. "/.config/hypr/UserScripts"
 
-hl.exec_cmd("awww-daemon --format xrgb")
+local M = {}
 
--- D-Bus environment setup
-hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
-hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+hl.on("hyprland.start", function()
+    hl.exec_cmd("awww-daemon --format xrgb")
 
--- Polkit (Polkit Gnome / KDE)
-hl.exec_cmd(scriptsDir .. "/Polkit.sh")
+    hl.exec_cmd("systemctl --user start hyprland-session.target")
+    -- D-Bus environment setup
+    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
 
--- Core services
-hl.exec_cmd("waybar")
-hl.exec_cmd("nm-applet --indicator")
-hl.exec_cmd("dunst")
+    -- Polkit (Polkit Gnome / KDE)
+    hl.exec_cmd(scripts_dir .. "/Polkit.sh")
 
--- Idle management
-hl.exec_cmd("hypridle")
+    -- Core services
+    hl.exec_cmd("waybar")
+    hl.exec_cmd("nm-applet --indicator")
+    hl.exec_cmd("dunst")
 
--- Pyprland daemon
-hl.exec_cmd("pypr")
+    -- Idle management
+    hl.exec_cmd("hypridle")
+
+    -- Pyprland daemon
+    hl.exec_cmd("pypr")
+end)
+
+return M

@@ -35,3 +35,11 @@ indent = { tab-width = 4, unit = "    " }
 [[language]]
 name = "scala"
 indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "kotlin"
+language-servers = [ "kotlin-language-server" ]
+
+[language-server.kotlin-language-server]
+command = "/home/winlogon/dev/kotlin/kotlin-lsp/kotlin-language-server/server/build/install/server/bin/kotlin-language-server"
+environment = { "KLS_LOG_LEVEL" = "ALL" }
