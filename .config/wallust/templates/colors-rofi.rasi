@@ -25,9 +25,3 @@ background: rgba(0,0,0,0.7);
 foreground: {{foreground}};
 border-color: {{color9 | darken(0.45)}};
 }
-
-# Line 24 above is rewritten in place by darklight.js (setRofiBackground), which
-# flips the popup background between a dark and a light translucent wash. Keep it
-# on line 24. The pairs above are derived from one palette colour each with
-# darken() and lighten(), so foreground and background cannot collide the way
-# {{color7}} foreground on {{color7}} background did under the light16 palette.

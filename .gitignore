@@ -1,9 +1,6 @@
 # Log files
 **/*.log
 
-# Tmux plugins (the TPM submodule lives at .tmux/plugins/tpm)
-.config/tmux/plugins
-
 # Neovim files & plugins
 .local/share/nvim
 .local/state

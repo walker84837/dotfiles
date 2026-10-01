@@ -10,10 +10,10 @@ To get started with this project, you'll need to clone the repository and instal
 
 ```shell
 $ cd ~
-$ git clone --recurse-submodules https://github.com/walker84837/dotfiles.git
+$ git clone https://github.com/walker84837/dotfiles.git
 ```
 
-This command clones the repository and initializes the submodules. Once the cloning has finished:
+Once the cloning has finished:
 
 ``` console
 $ cd dotfiles
@@ -50,10 +50,11 @@ To use this project, you'll need to have the following dependencies installed:
 
 This project provides a collection of configuration files for a personalized development environment, including:
 
-* **Tmux settings**: tpm & catppuccin
 * **Btop settings**: theme
 * **Zsh settings**: p10k & zinit
 * **Neovim configuration**: lazy.nvim + codeium
+* **Terminal and desktop theming**: kitty, rofi, waybar and dunst, coloured from
+  the wallpaper by wallust
 
 ## Licensing
 
