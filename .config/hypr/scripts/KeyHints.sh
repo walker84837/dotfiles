@@ -47,13 +47,13 @@ yad --width=$dynamic_width --height=$dynamic_height \
 " Z" "Desktop Zoom" "(pyprland)" \
 " Alt V" "Clipboard Manager" "(cliphist)" \
 " W" "Choose wallpaper" "(Wallpaper Menu)" \
-" Shift W" "Choose wallpaper effects" "(imagemagick + swww)" \
-"CTRL ALT W" "Random wallpaper" "(via swww)" \
+" Shift W" "Choose wallpaper effects" "(imagemagick + awww)" \
+"CTRL ALT W" "Random wallpaper" "(via awww)" \
 " B" "Hide/UnHide Waybar" "waybar" \
 " CTRL B" "Choose waybar styles" "(waybar styles)" \
 " ALT B" "Choose waybar layout" "(waybar layout)" \
-" ALT R" "Reload Waybar swaync Rofi" "CHECK NOTIFICATION FIRST!!!" \
-" SHIFT N" "Launch Notification Panel" "swaync Notification Center" \
+" ALT R" "Reload Waybar Rofi" "waybar + rofi + scripts" \
+" SHIFT N" "Toggle Do Not Disturb" "dunstctl set-paused toggle" \
 " Print" "screenshot" "(grim)" \
 " Shift Print" "screenshot region" "(grim + slurp)" \
 " Shift S" "screenshot region" "(swappy)" \

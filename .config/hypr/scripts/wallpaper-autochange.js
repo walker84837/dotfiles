@@ -3,7 +3,7 @@
  * Automatically cycle through wallpapers in a given directory.
  * Usage: wallpaper-autochange.js <directory>
  *
- * Selects a random image, applies it via swww, refreshes wallust,
+ * Selects a random image, applies it via awww, refreshes wallust,
  * then waits INTERVAL seconds before the next change.
  */
 import { execSync, spawn } from 'child_process';
@@ -33,9 +33,9 @@ function collectImages(dir) {
 
 function setWallpaper(monitor, wallpaper) {
     const env = { ...process.env };
-    env.SWWW_TRANSITION_FPS = '60';
-    env.SWWW_TRANSITION_TYPE = 'simple';
-    spawn('swww', ['img', '-o', monitor, wallpaper], { detached: true, stdio: 'ignore', env });
+    env.AWWW_TRANSITION_FPS = '60';
+    env.AWWW_TRANSITION_TYPE = 'simple';
+    spawn('awww', ['img', '-o', monitor, wallpaper], { detached: true, stdio: 'ignore', env });
 }
 
 function refresh() {

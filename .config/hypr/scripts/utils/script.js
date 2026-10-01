@@ -19,9 +19,9 @@ export function refreshNoWaybar() {
     });
 }
 
-export function wallustSwww(wallpaper) {
+export function wallustAwww(wallpaper) {
     return new Promise((resolve, reject) => {
-        const child = spawn(`${scriptsDir}/WallustSwww.sh`, [], {
+        const child = spawn(`${scriptsDir}/wallust-awww.js`, [], {
             env: { ...process.env, WALLPAPER: wallpaper },
         });
         child.on('close', (code) => (code === 0 ? resolve() : reject(new Error(`exit ${code}`))));

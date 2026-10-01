@@ -6,13 +6,13 @@ import { getFocusedMonitor } from './utils/hypr.js';
 import { refresh } from './utils/script.js';
 import {
     scriptsDir,
-    swayncImages,
+    notifImages,
     wallpaperEffectsCurrent,
     wallpaperEffectsModified,
     rofiWallpaperEffectConfig,
 } from './utils/paths.js';
 
-const SWWW_PARAMS = '--transition-fps 60 --transition-type wipe --transition-duration 2';
+const AWWW_PARAMS = '--transition-fps 60 --transition-type wipe --transition-duration 2';
 
 const effects = new Map([
     ['Black & White', 'magick $1 -colorspace gray -sigmoidal-contrast 10,40% $2'],
@@ -44,7 +44,7 @@ function rofiMenu(prompt, options) {
 }
 
 async function noEffects(monitor) {
-    spawn('swww', ['img', '-o', monitor, wallpaperEffectsCurrent, ...SWWW_PARAMS.split(' ')], { detached: true, stdio: 'ignore' });
+    spawn('awww', ['img', '-o', monitor, wallpaperEffectsCurrent, ...AWWW_PARAMS.split(' ')], { detached: true, stdio: 'ignore' });
     await new Promise(r => setTimeout(r, 2100));
 
     spawn('wallust', ['run', wallpaperEffectsCurrent, '-s'], { detached: true, stdio: 'ignore' });
@@ -52,7 +52,7 @@ async function noEffects(monitor) {
 
     await refresh();
 
-    execSync(`notify-send -u low -i "${join(swayncImages, 'bell.png')}" "No wallpaper effects"`, { stdio: 'ignore' });
+    execSync(`notify-send -u low -i "${join(notifImages, 'bell.png')}" "No wallpaper effects"`, { stdio: 'ignore' });
     copyFileSync(wallpaperEffectsCurrent, wallpaperEffectsModified);
 }
 
@@ -80,16 +80,16 @@ async function main() {
         return;
     }
 
-    execSync(`notify-send -u normal -i "${join(swayncImages, 'bell.png')}" "Applying ${choice} effects"`, { stdio: 'ignore' });
+    execSync(`notify-send -u normal -i "${join(notifImages, 'bell.png')}" "Applying ${choice} effects"`, { stdio: 'ignore' });
     await applyEffect(cmd);
     await new Promise(r => setTimeout(r, 1000));
 
-    spawn('swww', ['img', '-o', monitor, wallpaperEffectsModified, ...SWWW_PARAMS.split(' ')], { detached: true, stdio: 'ignore' });
+    spawn('awww', ['img', '-o', monitor, wallpaperEffectsModified, ...AWWW_PARAMS.split(' ')], { detached: true, stdio: 'ignore' });
     await new Promise(r => setTimeout(r, 2100));
     spawn('wallust', ['run', wallpaperEffectsModified, '-s'], { detached: true, stdio: 'ignore' });
     await new Promise(r => setTimeout(r, 100));
     await refresh();
-    execSync(`notify-send -u low -i "${join(swayncImages, 'bell.png')}" "${choice} effects applied"`, { stdio: 'ignore' });
+    execSync(`notify-send -u low -i "${join(notifImages, 'bell.png')}" "${choice} effects applied"`, { stdio: 'ignore' });
 }
 
 main().catch(console.error);

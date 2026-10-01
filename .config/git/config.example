@@ -1,0 +1,35 @@
+# Example local git config. Copy to ~/.config/git/config.local after cloning.
+#
+# The tracked ~/.config/git/config pulls this file in via [include], so
+# anything defined here overrides the tracked base. It is gitignored, which
+# makes it the right place for secrets and machine-specific paths.
+#
+# Read values with `git config KEY` (no --global): `git config --global KEY`
+# does not follow [include] and returns empty for keys defined here.
+
+# Identity used for commits. Switch per-repo with the `git-identity` script.
+[user]
+	name = "Your Name"
+	email = "you@example.com"
+	# GPG key ID (last 16 hex chars of the fingerprint), not the full key.
+	# Remove this line to commit unsigned.
+	signingkey = "0123456789ABCDEF"
+
+# Trust these repositories despite differing ownership (e.g. root-owned
+# checkouts or shared containers). Prefer a specific path over "*".
+[safe]
+	directory = /home/you/dev
+
+# Personal access token, for manual API calls only.
+#
+# Neither git nor the gh CLI reads this key. git has no such config key, and
+# gh authenticates from ~/.config/gh/hosts.yml or $GH_TOKEN only. Storing it
+# here only avoids retyping it in ad-hoc curl commands:
+#
+#   curl -H "Authorization: Bearer $(git config github.token)" \
+#        https://api.github.com/user
+#
+# Prefer `gh auth login` for gh itself; it stores a scoped token in the
+# libsecret keyring rather than in a file.
+# [github]
+# 	token = "ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"

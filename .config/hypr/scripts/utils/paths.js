@@ -8,8 +8,8 @@ export const scriptsDir = join(HOME, '.config/hypr/scripts');
 export const configDir = join(HOME, '.config/hypr');
 
 // External config paths
-export const swayncImages = join(HOME, '.config/swaync/images');
-export const swayncIcons = join(HOME, '.config/swaync/icons');
+export const notifImages = join(HOME, '.config/hypr/notif-icons/images');
+export const notifIcons = join(HOME, '.config/hypr/notif-icons/icons');
 export const rofiDir = join(HOME, '.config/rofi');
 export const waybarDir = join(HOME, '.config/waybar');
 export const waybarStyleDir = join(HOME, '.config/waybar/style');
@@ -31,7 +31,7 @@ export const iconsDir = join(HOME, '.icons');
 export const wallpaperEffectsDir = join(HOME, '.config/hypr/wallpaper_effects');
 export const wallpaperEffectsCurrent = join(wallpaperEffectsDir, '.wallpaper_current');
 export const wallpaperEffectsModified = join(wallpaperEffectsDir, '.wallpaper_modified');
-export const wallpaperCacheDir = join(HOME, '.cache/swww');
+export const wallpaperCacheDir = join(HOME, '.cache/awww');
 export const rofiCurrentWallpaper = join(HOME, '.config/rofi/.current_wallpaper');
 
 // Music and media

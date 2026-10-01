@@ -1,0 +1,38 @@
+# Global git config (tracked).
+#
+# Identity, GPG signing key, and per-machine repository trust live in
+# config.local, which is gitignored. Override those per-repo with the
+# `git-identity` script (see .local/share/scripts/git-identity-switcher.js).
+
+[protocol "file"]
+	allow = always
+
+[commit]
+	gpgsign = true
+
+[core]
+	editor = nvim
+
+[init]
+	defaultBranch = main
+
+[push]
+	autoSetupRemote = true
+
+[pull]
+	rebase = true
+
+# Credentials are stored in the libsecret keyring, not on disk.
+[credential]
+	helper = /usr/lib/git-core/git-credential-libsecret
+
+[credential "https://codeberg.org"]
+	helper =
+	helper = !tea login helper
+
+[credential "https://git.disroot.org"]
+	helper =
+	helper = !tea login helper
+
+[include]
+	path = ~/.config/git/config.local

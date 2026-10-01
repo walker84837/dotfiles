@@ -36,5 +36,5 @@ hl.bind(mainMod .. " + SHIFT + T", hl.dsp.exec_cmd(scriptsDir .. "/darklight.js"
 -- Music player (online streams + local library)
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd(scriptsDir .. "/rofibeats.js"))
 
--- Wallpaper effects (ImageMagick filters via swww)
+-- Wallpaper effects (ImageMagick filters via awww)
 hl.bind(mainMod .. " + ALT + X", hl.dsp.exec_cmd(scriptsDir .. "/wallpaper-effects.js"))

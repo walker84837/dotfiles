@@ -6,10 +6,9 @@ wallpaper_base_path="$HOME/Pictures/wallpapers/Dynamic-Wallpapers"
 dark_wallpapers="$wallpaper_base_path/Dark"
 light_wallpapers="$wallpaper_base_path/Light"
 hypr_config_path="$HOME/.config/hypr"
-swaync_style="$HOME/.config/swaync/style.css"
 ags_style="$HOME/.config/ags/user/style.css"
 SCRIPTSDIR="$HOME/.config/hypr/scripts"
-notif="$HOME/.config/swaync/images/bell.png"
+notif="$HOME/.config/hypr/notif-icons/images/bell.png"
 wallust_rofi="$HOME/.config/wallust/templates/colors-rofi.rasi"
 
 kitty_conf="$HOME/.config/kitty/kitty.conf"
@@ -21,11 +20,11 @@ pallete_light="light16"
 # kill swaybg if running
 pkill swaybg
 
-# Initialize swww if needed
-swww query || swww-daemon
+# Initialize awww if needed
+awww query || awww-daemon
 
-# Set swww options
-swww="swww img"
+# Set awww options
+awww="awww img"
 effect="--transition-bezier .43,1.19,1,.4 --transition-fps 60 --transition-type grow --transition-pos 0.925,0.977 --transition-duration 2"
 
 # Determine current theme mode
@@ -77,15 +76,6 @@ set_waybar_style "$next_mode"
 notify_user "$next_mode"
 
 
-# swaync color change
-if [ "$next_mode" = "Dark" ]; then
-    sed -i '/@define-color noti-bg/s/rgba([0-9]*,\s*[0-9]*,\s*[0-9]*,\s*[0-9.]*);/rgba(0, 0, 0, 0.8);/' "${swaync_style}"
-	sed -i '/@define-color noti-bg-alt/s/#.*;/#111111;/' "${swaync_style}"
-else
-    sed -i '/@define-color noti-bg/s/rgba([0-9]*,\s*[0-9]*,\s*[0-9]*,\s*[0-9.]*);/rgba(255, 255, 255, 0.9);/' "${swaync_style}"
-	sed -i '/@define-color noti-bg-alt/s/#.*;/#F0F0F0;/' "${swaync_style}"
-fi
-
 # ags color change
 if [ "$next_mode" = "Dark" ]; then
     sed -i '/@define-color noti-bg/s/rgba([0-9]*,\s*[0-9]*,\s*[0-9]*,\s*[0-9.]*);/rgba(0, 0, 0, 0.4);/' "${ags_style}"
@@ -118,8 +108,8 @@ else
     next_wallpaper="$(find "${light_wallpapers}" -type f \( -iname "*.jpg" -o -iname "*.png" \) -print0 | shuf -n1 -z | xargs -0)"
 fi
 
-# Update wallpaper using swww command
-$swww "${next_wallpaper}" $effect
+# Update wallpaper using awww command
+$awww "${next_wallpaper}" $effect
 
 
 # Set Kvantum Manager theme & QT5/QT6 settings
@@ -228,7 +218,7 @@ update_theme_mode
 
 sleep 0.5
 # Run remaining scripts
-${SCRIPTSDIR}/WallustSwww.sh
+${SCRIPTSDIR}/wallust-awww.js
 sleep 1
 ${SCRIPTSDIR}/Refresh.sh 
 

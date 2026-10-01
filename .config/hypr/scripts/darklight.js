@@ -1,7 +1,12 @@
 #!/usr/bin/env node
 /**
  * Dark/Light theme switcher for Hyprland.
- * Coordinates theme changes across: wallust, dunst, kitty, Qt, GTK, rofi, waybar.
+ * Coordinates theme changes across: wallust, kitty, Qt, GTK, rofi, waybar.
+ *
+ * Dunst is NOT handled here: its colours come from the wallust template
+ * ~/.config/wallust/templates/colors-dunst, which rewrites the whole
+ * ~/.config/dunst/dunstrc. That runs inside the wallust-swww step below, so
+ * editing dunst colours here would only be overwritten a moment later.
  */
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { execSync } from 'child_process';
@@ -9,8 +14,7 @@ import { join, basename } from 'path';
 import {
   HOME,
   scriptsDir,
-  swayncImages,
-  dunstrc,
+  notifImages,
   kittyConf,
   wallustConfig,
   wallustRofi,
@@ -32,22 +36,6 @@ import { parseNullSeparated, parseNullSeparatedFull } from './utils/fs.js';
 const themeConfig = {
   Dark: { palette: 'dark16', kvantum: 'Catppuccin-Mocha', qt5ct: 'Catppuccin-Mocha', qt6ct: 'Catppuccin-Mocha' },
   Light: { palette: 'light16', kvantum: 'Catppuccin-Latte', qt5ct: 'Catppuccin-Latte', qt6ct: 'Catppuccin-Latte' },
-};
-
-// Dunst notification colors by theme
-const dunstColors = {
-  Dark: {
-    lowBg: '#222222', lowFg: '#888888',
-    normBg: '#285577', normFg: '#ffffff',
-    critBg: '#900000', critFg: '#ffffff', critFrame: '#ff0000',
-    frame: '#aaaaaa',
-  },
-  Light: {
-    lowBg: '#f0f0f0', lowFg: '#555555',
-    normBg: '#ffffff', normFg: '#222222',
-    critBg: '#ff4444', critFg: '#ffffff', critFrame: '#cc0000',
-    frame: '#888888',
-  },
 };
 
 const kittyColors = {
@@ -162,51 +150,6 @@ function pickRandomWaybarStyle(mode) {
 }
 
 /**
- * Update dunst notification colors for all urgency levels.
- * Handles the INI-style dunstrc with [urgency_low], [urgency_normal],
- * [urgency_critical] sections and the [global] frame_color.
- * @param {string} mode - 'Dark' or 'Light'.
- */
-function setDunstColors(mode) {
-  const c = dunstColors[mode];
-
-  // Maps each INI section to its editable keys and which color value to use.
-  // Key = config key name, Value = which property on dunstColors[mode] to read.
-  const sectionMap = {
-    '[urgency_low]':      { background: 'lowBg',  foreground: 'lowFg' },
-    '[urgency_normal]':   { background: 'normBg', foreground: 'normFg' },
-    '[urgency_critical]': { background: 'critBg', foreground: 'critFg', frame_color: 'critFrame' },
-    '[global]':           { frame_color: 'frame' },
-  };
-
-  const lines = read(dunstrc).split('\n');
-  let currentSection = '';
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i].trim();
-
-    // Track current INI section
-    if (line.startsWith('[') && line.endsWith(']')) {
-      currentSection = line;
-      continue;
-    }
-
-    const keyMap = sectionMap[currentSection];
-    if (!keyMap) continue;
-
-    // Check each known key in this section — first match wins
-    for (const [key, valueKey] of Object.entries(keyMap)) {
-      if (line.startsWith(key)) {
-        lines[i] = `    ${key} = "${c[valueKey]}"`;
-        break;
-      }
-    }
-  }
-
-  write(dunstrc, lines.join('\n'));
-}
-
-/**
  * Update kitty terminal foreground, background, and cursor colors.
  * @param {string} mode - 'Dark' or 'Light'.
  */
@@ -302,7 +245,7 @@ function pickRandomWallpaper(mode) {
  * @param {string} [body=''] - Optional body text.
  */
 function notify(title, body = '') {
-  execSync(`notify-send -u low -i "${join(swayncImages, 'bell.png')}" "${title}" "${body}"`, { stdio: 'ignore' });
+  execSync(`notify-send -u low -i "${join(notifImages, 'bell.png')}" "${title}" "${body}"`, { stdio: 'ignore' });
 }
 
 /** Sleep for a number of milliseconds.
@@ -318,18 +261,17 @@ function sleep(ms) {
  */
 async function main() {
   execSync('pkill swaybg || true');
-  execSync('swww query || swww-daemon');
+  execSync('awww query || awww-daemon');
 
   const mode = getNextMode();
 
   setWallustPalette(mode);
   pickRandomWaybarStyle(mode);
-  setDunstColors(mode);
   setKittyColors(mode);
 
   const wallpaper = pickRandomWallpaper(mode);
   if (wallpaper) {
-    execSync(`swww img "${wallpaper}" --transition-bezier .43,1.19,1,.4 --transition-fps 60 --transition-type grow --transition-pos 0.925,0.977 --transition-duration 2`);
+    execSync(`awww img "${wallpaper}" --transition-bezier .43,1.19,1,.4 --transition-fps 60 --transition-type grow --transition-pos 0.925,0.977 --transition-duration 2`);
   }
 
   setQtColors(mode);
@@ -340,11 +282,11 @@ async function main() {
   notify(`Switching to ${mode} mode`);
 
   await sleep(500);
-  execSync(`${scriptsDir}/wallust-swww.js`);
+  execSync(`${scriptsDir}/wallust-awww.js`);
   await sleep(1000);
   execSync(`${scriptsDir}/Refresh.sh`);
 
-  execSync(`notify-send -u normal -i "${join(swayncImages, 'bell.png')}" "Themes in ${mode} Mode"`, { stdio: 'ignore' });
+  execSync(`notify-send -u normal -i "${join(notifImages, 'bell.png')}" "Themes in ${mode} Mode"`, { stdio: 'ignore' });
 }
 
 main().catch(console.error);

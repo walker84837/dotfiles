@@ -1,0 +1,251 @@
+# Interface elements
+"ui.background" = { bg = "background" }
+"ui.background.separator" = "light-gray"
+"ui.text" = "foreground"
+"ui.text.inactive" = "gray"
+"ui.text.info" = "accent3"
+"ui.text.directory" = "accent2"
+"ui.cursor" = { fg = "background", bg = "cursor" }
+"ui.cursor.normal" = { fg = "background", bg = "cursor" }
+"ui.cursor.insert" = { fg = "background", bg = "accent2" }
+"ui.cursor.select" = { fg = "background", bg = "accent3" }
+"ui.cursor.match" = { fg = "accent4", bg = "background" }
+"ui.cursor.primary" = { fg = "background", bg = "cursor" }
+"ui.cursor.primary.normal" = { fg = "background", bg = "cursor" }
+"ui.cursor.primary.insert" = { fg = "background", bg = "accent2" }
+"ui.cursor.primary.select" = { fg = "background", bg = "accent3" }
+"ui.debug.breakpoint" = "red"
+"ui.debug.active" = "yellow"
+"ui.gutter" = "gray"
+"ui.gutter.selected" = "foreground"
+"ui.linenr" = "gray"
+"ui.linenr.selected" = "foreground"
+"ui.statusline" = { fg = "foreground", bg = "black" }
+"ui.statusline.inactive" = { fg = "gray", bg = "black" }
+"ui.statusline.normal" = { fg = "accent2", bg = "black" }
+"ui.statusline.insert" = { fg = "accent3", bg = "black" }
+"ui.statusline.select" = { fg = "accent4", bg = "black" }
+"ui.statusline.separator" = "light-gray"
+"ui.bufferline" = { fg = "gray", bg = "background" }
+"ui.bufferline.active" = { fg = "foreground", modifiers = ["bold"] }
+"ui.bufferline.background" = { fg = "gray", bg = "background" }
+"ui.selection" = { bg = "selection" }
+"ui.selection.primary" = { bg = "accent6" }
+"ui.window" = "light-gray"
+"ui.popup" = { bg = "black" }
+"ui.popup.info" = { fg = "foreground", bg = "accent6" }
+"ui.picker.header" = { fg = "accent2", bg = "background" }
+"ui.picker.header.column" = { fg = "gray", bg = "background" }
+"ui.picker.header.column.active" = { fg = "accent2", modifiers = ["bold"] }
+"ui.menu" = { fg = "foreground", bg = "background" }
+"ui.menu.selected" = { fg = "black", bg = "cyan" }
+"ui.menu.scroll" = { fg = "light-gray", bg = "gray" }
+"ui.help" = { fg = "foreground", bg = "black" }
+"ui.highlight" = { bg = "selection" }
+"ui.highlight.frameline" = { fg = "accent1", bg = "background" }
+"ui.text.focus" = "cyan"
+"ui.virtual.ruler" = "light-gray"
+"ui.virtual.indent-guide" = "gray"
+"ui.virtual.whitespace" = "gray"
+"ui.virtual.inlay-hint" = "gray"
+"ui.virtual.inlay-hint.parameter" = "accent3"
+"ui.virtual.inlay-hint.type" = "accent4"
+"ui.virtual.wrap" = "light-gray"
+"ui.virtual.jump-label" = "accent2"
+
+# Syntax highlighting (Tree-sitter scopes)
+"attribute" = "accent3"
+"constant" = "accent5"
+"constant.builtin" = { fg = "accent5", modifiers = ["bold"] }
+"constant.builtin.boolean" = "accent5"
+"constant.character" = "accent4"
+"constant.character.escape" = "accent4"
+"constant.character.regexp" = "accent4"
+"constant.numeric" = "accent5"
+"constant.numeric.integer" = "accent5"
+"constant.numeric.float" = "accent5"
+"constructor" = "accent2"
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"comment.line" = { fg = "comment", modifiers = ["italic"] }
+"comment.block" = { fg = "comment", modifiers = ["italic"] }
+"comment.documentation" = { fg = "comment", modifiers = ["italic"] }
+"string" = "accent4"
+"string.quoted" = "accent4"
+"string.regexp" = "accent4"
+"string.special" = { fg = "accent4", modifiers = ["italic"] }
+"string.path" = "accent4"
+"string.url" = "accent4"
+"string.symbol" = "accent4"
+"variable" = "foreground"
+"variable.builtin" = "accent6"
+"variable.parameter" = "accent6"
+"variable.other" = "foreground"
+"variable.other.member" = "accent6"
+"variable.other.member.private" = "accent1"
+"label" = "accent3"
+"punctuation" = "delimiter"
+"punctuation.delimiter" = "delimiter"
+"punctuation.bracket" = "delimiter"
+"punctuation.special" = "delimiter"
+"operator" = "delimiter"
+"keyword" = "accent1"
+"keyword.control" = { fg = "accent1", modifiers = ["bold"] }
+"keyword.control.conditional" = "accent1"
+"keyword.control.repeat" = "accent1"
+"keyword.control.import" = "accent1"
+"keyword.control.return" = "accent1"
+"keyword.control.exception" = "accent1"
+"keyword.operator" = "accent1"
+"keyword.directive" = "accent1"
+"keyword.function" = "accent1"
+"keyword.storage" = "accent1"
+"keyword.storage.type" = "accent3"
+"keyword.storage.modifier" = "accent1"
+"function" = "accent2"
+"function.builtin" = { fg = "accent2", modifiers = ["bold"] }
+"function.method" = "accent2"
+"function.method.private" = "accent2"
+"function.macro" = "accent2"
+"function.special" = "accent2"
+"type" = "accent3"
+"type.builtin" = "accent3"
+"tag" = "accent3"
+"tag.builtin" = "accent3"
+"namespace" = "accent3"
+"special" = "accent5"
+
+# Markdown and markup
+"markup.normal" = "foreground"
+"markup.heading" = "accent2"
+"markup.heading.marker" = "accent1"
+"markup.heading.1" = "accent1"
+"markup.heading.2" = "accent1"
+"markup.heading.3" = "accent1"
+"markup.heading.4" = "accent1"
+"markup.heading.5" = "accent1"
+"markup.heading.6" = "accent1"
+"markup.list.unnumbered" = "foreground"
+"markup.list.numbered" = "foreground"
+"markup.list.checked" = "accent2"
+"markup.list.unchecked" = "accent4"
+"markup.bold" = { fg = "foreground", modifiers = ["bold"] }
+"markup.italic" = { fg = "foreground", modifiers = ["italic"] }
+"markup.strikethrough" = "gray"
+"markup.link" = "accent4"
+"markup.link.url" = "accent4"
+"markup.link.label" = "accent2"
+"markup.link.text" = "foreground"
+"markup.quote" = "accent6"
+"markup.raw.inline" = "accent5"
+"markup.raw.block" = "accent5"
+
+# Diff and version control
+"diff.plus" = "green"
+"diff.plus.gutter" = "green"
+"diff.minus" = "red"
+"diff.minus.gutter" = "red"
+"diff.delta.moved" = "yellow"
+"diff.delta.conflict" = "red"
+"diff.delta.gutter" = "yellow"
+
+# Miscellaneous
+"tabstop" = "comment"
+
+# Diagnostics
+"warning" = "accent4"
+"error" = "accent1"
+"info" = "accent3"
+"hint" = "accent6"
+"diagnostic" = { underline = { style = "curl", color = "accent1" } }
+"diagnostic.hint" = "accent6"
+"diagnostic.info" = "accent3"
+"diagnostic.warning" = "accent4"
+"diagnostic.error" = "accent1"
+"diagnostic.unnecessary" = { fg = "gray", modifiers = ["dim"] }
+"diagnostic.deprecated" = { fg = "gray", modifiers = ["strike"] }
+
+# Palette
+#
+# The background is pinned to a dark grey and every foreground to the light end,
+# the same way the kitty template does, because against a dark background
+# luminance is the only thing carrying contrast. wallust's dark16 palette puts
+# color0-7 at roughly the same lightness as the background, so mapping syntax
+# straight onto them renders it at ~1.1:1. Every entry below is therefore run
+# through lighten() to clear 4.5:1.
+#
+# The six accents share one lightness and are separated by HUE and CHROMA
+# instead. Varying their lightness was tried first and is the wrong lever here:
+# spreading six colours down a lightness ramp forces the dimmest one below 4.5:1
+# against this background (accent6 measured 3.00:1), and on a wallpaper palette
+# with only two or three hues the lightness spread just reads as six muddy
+# shades of the same colour. Holding one lightness keeps every accent legible
+# with room to spare and leaves hue as the only thing telling them apart, so
+# saturate() can be pushed well past what was previously safe.
+#
+# lighten(0.82) + saturate(0.42) and these six source slots were chosen by
+# sweeping both across every wallpaper in ~/Pictures/Wallpapers. Slots matter as
+# much as the factors here: the first attempt used color2 and color8, which are
+# both neutral greys on some palettes and collided into the same colour, and
+# color2 rendered at 4.33:1. Taking the accents from color5, color3, color6,
+# color4 and the light half (color11, color13) fixes both: worst case is now
+# 5.48:1 and the closest pair of accents is further apart than with any other
+# slot set tried. Going past saturate(0.42) starts failing; 0.45 drops a
+# wallpaper below 4.5:1.
+#
+# Do NOT add wallust's `strip` filter here: it removes the leading '#', and
+# helix 25.07 ThemePalette::string_to_rgb accepts only '#rrggbb' or a numeric
+# ANSI index. One bad entry makes try_from fail and the whole palette falls back
+# to defaults silently, leaving every named colour unresolved.
+[palette]
+# Base colours
+background = "#1C1C1D"
+# lighten() only moves toward white, so it cannot turn this near-white palette
+# slot into a grey; blend() against a mid light-grey can. This is the body text
+# colour (ui.text, variable), and a light grey reads calmer than near-white at
+# the same 12:1 contrast.
+foreground = "#D5D5D6"
+cursor = "#EFEFF0"
+selection = "#A16D75"
+comment = "#D0B9D0"
+# helix merges its built-in palette names with this one rather than replacing
+# them, so any name not defined here resolves to a fixed terminal colour that
+# has nothing to do with the wallpaper. "gray" was undefined, which is why the
+# line numbers, gutter and virtual text looked washed out. Derive it from the
+# palette instead: mid-lightness, low chroma, so it stays legible but recedes.
+gray = "#B4A8BA"
+delimiter = "#A496B2"
+
+# Accent colours. One shared lightness, so hue and chroma do all the separating.
+# Source slots are spread across the ramp, and which six matters as much as the
+# factors. A wallpaper's chromatic slots cluster into hue families - the one in
+# the screenshot has blue (color1/3/9/11), gold (color4/12), red
+# (color2/5/10/13) and low-chroma greys (color0/6/7/8/14/15) - and an earlier
+# set drawn only from the reds produced six shades of one pink. These six were
+# chosen by scoring all 8008 combinations of the 16 slots on how many hue
+# families they span across every wallpaper, subject to clearing 4.5:1; this set
+# is the joint best and reaches four families on that wallpaper.
+accent1 = "#EB8888"
+accent2 = "#7D9DDB"
+accent3 = "#E17E9B"
+accent4 = "#E57E91"
+accent5 = "#F6808A"
+accent6 = "#BE8BF1"
+
+# Terminal colours, for diagnostics and anything matching helix's 16-colour set.
+black = "#858587"
+red = "#D28286"
+green = "#C199C1"
+yellow = "#B48694"
+blue = "#A6727A"
+magenta = "#E19B9D"
+cyan = "#BEA8D4"
+# Unused by the scopes above, but kept in step with foreground: a light grey
+# taken from the palette rather than pushed to white.
+white = "#B8B7B9"
+light-gray = "#D7D6D7"
+light-red = "#DF979B"
+light-green = "#CBA1CB"
+light-yellow = "#CA9BA7"
+light-blue = "#BE8A94"
+light-magenta = "#E9A8AB"
+light-cyan = "#DFB1DF"

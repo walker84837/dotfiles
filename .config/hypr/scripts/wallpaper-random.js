@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Set a random wallpaper from the user's wallpapers directory.
- * Picks a random image and applies it with swww transition, then
+ * Picks a random image and applies it with awww transition, then
  * syncs to rofi and refreshes wallust + waybar.
  */
 import { execSync, spawn } from 'child_process';
@@ -10,7 +10,7 @@ import { readdirSync } from 'fs';
 import { getFocusedMonitor } from './utils/hypr.js';
 import { scriptsDir, wallpapersDir } from './utils/paths.js';
 
-const SWWW_PARAMS = '--transition-fps 60 --transition-type random --transition-duration 1 --transition-bezier .43,1.19,1,.4';
+const AWWW_PARAMS = '--transition-fps 60 --transition-type random --transition-duration 1 --transition-bezier .43,1.19,1,.4';
 
 const IMAGE_EXTENSIONS = ['.jpg', '.jpeg', '.png', '.gif'];
 
@@ -32,8 +32,8 @@ function collectWallpapers(dir) {
 }
 
 function setWallpaper(monitor, wallpaper) {
-    execSync('swww query || swww-daemon --format xrgb', { stdio: 'ignore' });
-    spawn('swww', ['img', '-o', monitor, wallpaper, ...SWWW_PARAMS.split(' ')], { detached: true, stdio: 'ignore' });
+    execSync('awww query || awww-daemon --format xrgb', { stdio: 'ignore' });
+    spawn('awww', ['img', '-o', monitor, wallpaper, ...AWWW_PARAMS.split(' ')], { detached: true, stdio: 'ignore' });
 }
 
 function sleep(ms) {
@@ -52,7 +52,7 @@ async function main() {
 
     setWallpaper(monitor, randomPic);
 
-    execSync(`${scriptsDir}/wallust-swww.js`);
+    execSync(`${scriptsDir}/wallust-awww.js`);
     await sleep(1000);
     execSync(`${scriptsDir}/Refresh.sh`);
 }
